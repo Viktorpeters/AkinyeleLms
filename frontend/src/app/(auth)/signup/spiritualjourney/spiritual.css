@@ -1,0 +1,319 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #fff;
+}
+
+.left {
+  flex: 1;
+  position: relative;
+  min-height: 100vh;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  resize: none;
+}
+
+.input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  color: #111;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 12px 0;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 32px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkboxLabel:hover .checkboxInput ~ .checkmark {
+  background-color: #f0f0f0;
+}
+
+.checkboxInput:checked ~ .checkmark {
+  background-color: #1877f3;
+  border-color: #1877f3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxInput:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxLabel .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.backButton {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #e0e0e0;
+}
+
+.nextButton {
+  background-color: #0A2540;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+.nextButton:hover {
+  background-color: #166fe5;
+  transform: scale(1.02);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.footerText {
+  font-size: 13px;
+  color: #666;
+}
+
+.link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.stepIndicator {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  object-fit: contain;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: -5px;
+  right: 600px;
+}
+
+.stepText {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.step {
+  flex: 1;
+  height: 6px;
+  background-color: #4D6B8F;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.step.active {
+  background-color: #0A2540;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    width: 100%;
+    height: 250px;
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+  .left {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 12px;
+  }
+  .left {
+    display: none;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .input {
+    padding: 8px 10px;
+  }
+  .buttonGroup {
+    flex-direction: column;
+  }
+  .backButton,
+  .nextButton {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
