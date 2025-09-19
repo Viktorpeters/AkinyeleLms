@@ -42,9 +42,9 @@ export default function OTPVerification() {
       {/* Logo at top-left */}
       <div className="otp-logo">
         <Image
-          src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758131024/kica-logo02_cwlb81.jpg" 
+          src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg" 
           alt="Logo"
-          width={120}
+          width={60}
           height={40}
           priority
         />

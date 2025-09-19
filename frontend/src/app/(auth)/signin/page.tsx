@@ -36,7 +36,7 @@ export default function SignIn() {
 
       <div className="card">
         <div className="logoWrapper">
-          <img src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758131024/kica-logo02_cwlb81.jpg" width={60} height={40} alt="Logo" className="log" />
+          <img src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg" width={60} height={40} alt="Logo" className="log" />
         </div>
 
         <div className="header">
