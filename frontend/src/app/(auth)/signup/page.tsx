@@ -1,202 +1,361 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import {
-  User,
-  Phone,
-  Mail,
-  MapPin,
-  Users,
-  Heart,
-  Calendar,
-  ChevronRight,
-} from "lucide-react";
-import "./signup.css";
-import Link from "next/link";
+import styles from "./signup.module.css";
+import { Plus, ChevronDown, ChevronUp, X } from "lucide-react";
+import MultiDropdown from "./MultiDropdown/page";
 
 export default function SignupForm() {
+  const [step, setStep] = useState(1); // track current step
+
+  // Titles for each step
+  const stepTitles = [
+    "Personal Information",
+    "Background Information",
+    "Education and Career Data",
+    "Purpose And Personal Development",
+    " Spiritual And Moral life",
+  ];
+
+  // handlers
+  const handleNext = () => {
+    if (step < 5) setStep(step + 1);
+  };
+
+  const handleBack = () => {
+    if (step > 1) setStep(step - 1);
+  };
+
   return (
-    <div className="container">
-      <div className="signupWrapper">
-        <div className="illustrationSection">
+    <section className={styles.container}>
+
+         {/* <div className="bottom-right-footer">
+              <p>Kingdom Impact Coaching Academy</p>
+              <p>&copy; 2025</p>
+              <h6>KLOUD6 TECHNOLOGIES</h6>
+            </div> */}
+      {/* Left Image */}
+      <div className={styles.leftImage}>
+        <Image
+          src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758141945/Data_security_01_u3bwfq.jpg"
+          alt="Sign up illustration"
+          fill
+          className={styles.illustration}
+        />
+      </div>
+
+      {/* Right Form */}
+      <div className={styles.formWrapper}>
+        {/* Logo */}
+        <div className={styles.logoWrapper}>
           <Image
-            src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758141945/Data_security_01_u3bwfq.jpg"
-            alt="Sign up illustration"
-            width={400}
-            height={400}
-            className="illustration"
+            src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758131024/kica-logo02_cwlb81.jpg"
+            className={styles.logo}
+            width={60}
+            height={40}
+            alt="Logo"
           />
         </div>
 
-         <Image
-                src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758131024/kica-logo02_cwlb81.jpg"
-                className="logo"
-                width={100}
-                height={100}
-                alt=""
-              />
+        {/* Heading */}
+        <div className={styles.header}>
+          <h2>Create your account</h2>
 
-        <div className="formSection">
-          <div className="stepIndicator">
-            <p className="stepText">Step 1 of 4</p>
-            <div className="progressBar">
-              <div className="progress step1 active"></div>
-              <div className="progress step2"></div>
-              <div className="progress step3"></div>
-              <div className="progress step4"></div>
+          {/* Step Indicator */}
+          <div className={styles.stepIndicator}>
+            <p className={styles.stepText}>Step {step} of 5</p>
+            <div className={styles.progressBar}>
+              {[1, 2, 3, 4, 5].map((s) => (
+                <div
+                  key={s}
+                  className={`${styles.step} ${step >= s ? styles.active : ""}`}
+                ></div>
+              ))}
             </div>
           </div>
 
-          <div className="card">
-            <h1 className="title">Create your account</h1>
-            <p className="subtitle">It's quick and easy.</p>
-
-            <form className="form">
-              <div className="formRow">
-                <div className="inputGroup">
-                  <label htmlFor="fullName" className="label">
-                    <User size={14} className="icon" />
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    className="input"
-                    required
-                  />
-                </div>
-
-                <div className="inputGroup">
-                  <label htmlFor="gender" className="label">
-                    <Users size={14} className="icon" />
-                    Gender
-                  </label>
-                  <select id="gender" name="gender" className="input" required>
-                    <option value="" disabled>
-                      Select gender
-                    </option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="formRow">
-                <div className="inputGroup">
-                  <label htmlFor="dateOfBirth" className="label">
-                    <Calendar size={14} className="icon" />
-                    Date of Birth / Age
-                  </label>
-                  <input
-                    type="date"
-                    id="dateOfBirth"
-                    name="dateOfBirth"
-                    className="input"
-                    required
-                  />
-                </div>
-
-                <div className="inputGroup">
-                  <label htmlFor="phoneNumber" className="label">
-                    <Phone size={14} className="icon" />
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    placeholder="+234 812 345 6789"
-                    className="input"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="inputGroup">
-                <label htmlFor="email" className="label">
-                  <Mail size={14} className="icon" />
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="example@email.com"
-                  className="input"
-                  required
-                />
-              </div>
-
-              <div className="inputGroup">
-                <label htmlFor="address" className="label">
-                  <MapPin size={14} className="icon" />
-                  Address
-                </label>
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
-                  placeholder="123 Main Street"
-                  className="input"
-                  required
-                />
-              </div>
-
-              <div className="formRow">
-                <div className="inputGroup">
-                  <label htmlFor="parentGuardianContact" className="label">
-                    <Users size={14} className="icon" />
-                    Parent / Guardian Contact
-                  </label>
-                  <input
-                    type="text"
-                    id="parentGuardianContact"
-                    name="parentGuardianContact"
-                    placeholder="+234 700 000 0000"
-                    className="input"
-                    required
-                  />
-                </div>
-
-                <div className="inputGroup">
-                  <label htmlFor="emergencyContact" className="label">
-                    <Heart size={14} className="icon" />
-                    Emergency Contact
-                  </label>
-                  <input
-                    type="text"
-                    id="emergencyContact"
-                    name="emergencyContact"
-                    placeholder="+234 800 111 2222"
-                    className="input"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="divider"></div>
-
-              <Link href="/signup/mentorship">
-                    <button type="submit" className="nextButton">
-                Next <ChevronRight size={16} />
-              </button>
-              
-              </Link>
-            </form>
-          </div>
-
-          <div className="footer">
-            <p className="footerText">
-              Already have an account?{" "}
-              <a href="/auth/signin" className="link">
-                Sign in
-              </a>
-            </p>
-          </div>
+          {/* Dynamic Step Title */}
+          <h3>{stepTitles[step - 1]}</h3>
         </div>
+
+        {/* Step Forms */}
+        {step === 1 && (
+          <form className={styles.form}>
+            <input type="text" placeholder="Full Name" />
+            <select>
+              <option value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <input type="date" placeholder="Date of Birth" />
+            <input type="tel" placeholder="Phone Number" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Address" />
+            <input type="tel" placeholder="Parent / Guardian Contact" />
+            <input type="tel" placeholder="Emergency Contact" />
+
+            {/* Buttons */}
+            <div className={styles.btnGroup}>
+              <button
+                type="button"
+                className={styles.backBtn}
+                onClick={handleBack}
+                disabled={step === 1}
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                className={styles.nextBtn}
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            </div>
+
+               {/* <div className="bottom-right-footer">
+              <span>Kingdom Impact Coaching Academy</span>
+              <span>&copy; 2025</span>
+              <h6>KLOUD6 TECHNOLOGIES</h6>
+            </div> */}
+          </form>
+        )}
+
+        {step === 2 && (
+          <form className={styles.form}>
+            <select>
+              <option value="">Educational Status</option>
+              <option value="student">Student</option>
+              <option value="graduate">Graduate</option>
+              <option value="other">Other</option>
+            </select>
+            <select>
+              <option value="">Employment</option>
+              <option value="employed">Employed</option>
+              <option value="self-employed">Self-Employed</option>
+              <option value="unemployed">Unemployed</option>
+            </select>
+
+            {/* Replacing DCC/Zone & Centre with CompactMultiLevelDropdown */}
+            <MultiDropdown />
+
+            {/* Buttons */}
+            <div className={styles.btnGroup}>
+              <button
+                type="button"
+                className={styles.backBtn}
+                onClick={handleBack}
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                className={styles.nextBtn}
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            </div>
+          </form>
+        )}
+
+        {step === 3 && (
+          <form className={styles.form}>
+            {/* Current education */}
+            <div className={styles.formGroup}>
+              <label>Current educational pursuit</label>
+              <select>
+                <option value="">Select your pursuit</option>
+                <option>Undergraduate</option>
+                <option>Graduate</option>
+                <option>Postgraduate</option>
+              </select>
+            </div>
+
+            {/* Career interest */}
+            <div className={styles.formGroup}>
+              <label>Career interest</label>
+              <select>
+                <option value="">Select career interest</option>
+                <option>Engineering</option>
+                <option>Design</option>
+                <option>Management</option>
+              </select>
+            </div>
+
+            {/* Strengths */}
+            <div className={styles.formGroup}>
+              <label>Strengths</label>
+              <textarea placeholder="e.g., Leadership, time management..."></textarea>
+            </div>
+
+            {/* Weaknesses */}
+            <div className={styles.formGroup}>
+              <label>Weaknesses</label>
+              <textarea placeholder="e.g., Procrastination, public speaking..."></textarea>
+            </div>
+
+            {/* Skills/Hobbies */}
+            <div className={styles.formGroup}>
+              <label>Skills / Hobbies</label>
+              <textarea placeholder="e.g., Python, painting, hiking..."></textarea>
+            </div>
+
+            {/* Certifications */}
+            <div className={styles.formGroup}>
+              <label>Certifications</label>
+              <textarea placeholder="e.g., AWS Cloud Practitioner..."></textarea>
+            </div>
+
+            {/* Buttons */}
+            <div className={styles.btnGroup}>
+              <button
+                type="button"
+                className={styles.backBtn}
+                onClick={handleBack}
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                className={styles.nextBtn}
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            </div>
+          </form>
+        )}
+
+        {step === 4 && (
+          <form className={styles.formm}>
+            {/* Life Goals */}
+            <label>
+              Life Goals
+              <textarea
+                placeholder="What are your life goals?"
+                className={styles.textareaa}
+              ></textarea>
+            </label>
+
+            {/* Personal Strengths */}
+            <label>
+              Personal Strengths
+              <textarea
+                placeholder="What are your key strengths?"
+                className={styles.textareaa}
+              ></textarea>
+            </label>
+
+            {/* Areas of Improvements */}
+            <label>
+              Areas of Improvements
+              <textarea
+                placeholder="What are your weaknesses?"
+                className={styles.textareaa}
+              ></textarea>
+            </label>
+
+            {/* Role Models */}
+            <label>
+              Role Models
+              <textarea
+                placeholder="Who inspires you?"
+                className={styles.textareaa}
+              ></textarea>
+            </label>
+
+            {/* Vision */}
+            <label>
+              Vision
+              <textarea
+                placeholder="What do you hope to gain from this platform?"
+                className={styles.textareaa}
+              ></textarea>
+            </label>
+
+            {/* Buttons */}
+            <div className={styles.btnGroup}>
+              <button
+                type="button"
+                className={styles.backBtn}
+                onClick={handleBack}
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                className={styles.nextBtn}
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            </div>
+          </form>
+        )}
+
+        {step === 5 && (
+          <form className={styles.form}>
+            {/* Section A */}
+            <div className={styles.formGroup}>
+              <h3 className={styles.normalLabel}>
+                Describe your salvation experience
+              </h3>
+           
+              <textarea
+                placeholder="Tell us about your salvation experience"
+                className={styles.textarea}
+              ></textarea>
+            </div>
+
+            {/* Section B */}
+            <div className={styles.formGroup}>
+              <h3 className={styles.normalLabel}>
+                Describe your salvation experience
+              </h3>
+              
+              <textarea
+                placeholder="Tell us about your salvation experience"
+                className={styles.textarea}
+              ></textarea>
+            </div>
+
+            {/* Section C */}
+            <div className={styles.formGroup}>
+              <h3 className={styles.normalLabel}>Ministry Involvement</h3>
+              <div className={styles.checkboxRow}>
+                <label>
+                  <input type="checkbox" /> Choir
+                </label>
+                <label>
+                  <input type="checkbox" /> Ushering
+                </label>
+                <label>
+                  <input type="checkbox" /> Prayer Team
+                </label>
+                <label>
+                  <input type="checkbox" /> Evangelism
+                </label>
+              </div>
+            </div>
+
+
+            {/* Buttons */}
+            <div className={styles.btnGroup}>
+              <button
+                type="button"
+                className={styles.backBtn}
+                onClick={handleBack}
+              >
+                Back
+              </button>
+              <button type="submit" className={styles.nextBtn}>
+                Complete Profile
+              </button>
+            </div>
+          </form>
+        )}
       </div>
-    </div>
+    </section>
   );
 }

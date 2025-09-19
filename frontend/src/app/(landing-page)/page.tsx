@@ -1,11 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Link from "next/link";
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-      <div>
-        <Link href={"/signin"}>SignIn</Link>
-      </div>
-  );
+    <div>page</div>
+  )
 }
+
+export default page
