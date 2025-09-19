@@ -8,6 +8,20 @@ import MultiDropdown from "./MultiDropdown/page";
 export default function SignupForm() {
   const [step, setStep] = useState(1); // track current step
 
+
+  const courses = [
+  "Spiritual Formation & Kingdom Identity",
+  "Purpose Discovery & Life Mastery",
+  "Mindshift & Productivity Mastery",
+  "Business, Career & Financial Intelligence",
+  "Leadership & Capacity Building",
+  "Public Speaking & Influence",
+  "Marriage & Relationship Intelligence",
+  "Special Capacity-Building Labs",
+  "Digital Influence & Media Mastery",
+  "Generational Impact Modules"
+];
+
   // Titles for each step
   const stepTitles = [
     "Personal Information",
@@ -28,8 +42,7 @@ export default function SignupForm() {
 
   return (
     <section className={styles.container}>
-
-         {/* <div className="bottom-right-footer">
+      {/* <div className="bottom-right-footer">
               <p>Kingdom Impact Coaching Academy</p>
               <p>&copy; 2025</p>
               <h6>KLOUD6 TECHNOLOGIES</h6>
@@ -49,7 +62,7 @@ export default function SignupForm() {
         {/* Logo */}
         <div className={styles.logoWrapper}>
           <Image
-            src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758131024/kica-logo02_cwlb81.jpg"
+            src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg"
             className={styles.logo}
             width={60}
             height={40}
@@ -113,7 +126,7 @@ export default function SignupForm() {
               </button>
             </div>
 
-               {/* <div className="bottom-right-footer">
+            {/* <div className="bottom-right-footer">
               <span>Kingdom Impact Coaching Academy</span>
               <span>&copy; 2025</span>
               <h6>KLOUD6 TECHNOLOGIES</h6>
@@ -122,7 +135,7 @@ export default function SignupForm() {
         )}
 
         {step === 2 && (
-          <form className={styles.form}>
+          <form className={styles.formm}>
             <select>
               <option value="">Educational Status</option>
               <option value="student">Student</option>
@@ -159,73 +172,85 @@ export default function SignupForm() {
           </form>
         )}
 
-        {step === 3 && (
-          <form className={styles.form}>
-            {/* Current education */}
-            <div className={styles.formGroup}>
-              <label>Current educational pursuit</label>
-              <select>
-                <option value="">Select your pursuit</option>
-                <option>Undergraduate</option>
-                <option>Graduate</option>
-                <option>Postgraduate</option>
-              </select>
-            </div>
+    {step === 3 && (
+  <form className={styles.form}>
+    {/* Current education */}
+    <div className={styles.formGroup}>
+      <label>Current educational pursuit</label>
+      <select>
+        <option value="">Select your pursuit</option>
+        <option>Undergraduate</option>
+        <option>Graduate</option>
+        <option>Postgraduate</option>
+      </select>
+    </div>
 
-            {/* Career interest */}
-            <div className={styles.formGroup}>
-              <label>Career interest</label>
-              <select>
-                <option value="">Select career interest</option>
-                <option>Engineering</option>
-                <option>Design</option>
-                <option>Management</option>
-              </select>
-            </div>
+    {/* Career interest */}
+    <div className={styles.formGroup}>
+      <label>Career interest</label>
+      <select>
+        <option value="">Select career interest</option>
+        <option>Engineering</option>
+        <option>Design</option>
+        <option>Management</option>
+      </select>
+    </div>
 
-            {/* Strengths */}
-            <div className={styles.formGroup}>
-              <label>Strengths</label>
-              <textarea placeholder="e.g., Leadership, time management..."></textarea>
-            </div>
+    {/* Strengths */}
+    <div className={styles.formGroup}>
+      <label>Strengths</label>
+      <textarea placeholder="e.g., Leadership, time management..."></textarea>
+    </div>
 
-            {/* Weaknesses */}
-            <div className={styles.formGroup}>
-              <label>Weaknesses</label>
-              <textarea placeholder="e.g., Procrastination, public speaking..."></textarea>
-            </div>
+    {/* Weaknesses */}
+    <div className={styles.formGroup}>
+      <label>Weaknesses</label>
+      <textarea placeholder="e.g., Procrastination, public speaking..."></textarea>
+    </div>
 
-            {/* Skills/Hobbies */}
-            <div className={styles.formGroup}>
-              <label>Skills / Hobbies</label>
-              <textarea placeholder="e.g., Python, painting, hiking..."></textarea>
-            </div>
+    {/* Skills/Hobbies */}
+    <div className={styles.formGroup}>
+      <label>Skills / Hobbies</label>
+      <textarea placeholder="e.g., Python, painting, hiking..."></textarea>
+    </div>
 
-            {/* Certifications */}
-            <div className={styles.formGroup}>
-              <label>Certifications</label>
-              <textarea placeholder="e.g., AWS Cloud Practitioner..."></textarea>
-            </div>
+    {/* Certifications */}
+    <div className={styles.formGroup}>
+      <label>Certifications</label>
+      <textarea placeholder="e.g., AWS Cloud Practitioner..."></textarea>
+    </div>
 
-            {/* Buttons */}
-            <div className={styles.btnGroup}>
-              <button
-                type="button"
-                className={styles.backBtn}
-                onClick={handleBack}
-              >
-                Back
-              </button>
-              <button
-                type="button"
-                className={styles.nextBtn}
-                onClick={handleNext}
-              >
-                Next
-              </button>
-            </div>
-          </form>
-        )}
+    {/* Courses Select */}
+    <div className={styles.formGroup}>
+      <label>Select your course</label>
+      <select className={styles.courseSelect}>
+        <option value="">Select a course</option>
+        {courses.map((course, index) => (
+          <option key={index} value={course}>{course}</option>
+        ))}
+      </select>
+    </div>
+
+    {/* Buttons */}
+    <div className={styles.btnGroup}>
+      <button
+        type="button"
+        className={styles.backBtn}
+        onClick={handleBack}
+      >
+        Back
+      </button>
+      <button
+        type="button"
+        className={styles.nextBtn}
+        onClick={handleNext}
+      >
+        Next
+      </button>
+    </div>
+  </form>
+)}
+
 
         {step === 4 && (
           <form className={styles.formm}>
@@ -274,6 +299,27 @@ export default function SignupForm() {
               ></textarea>
             </label>
 
+            <div className={styles.sopContainer}>
+              <label className={styles.sopLabel}>Statement of Purpose</label>
+              <p className={styles.sopDescription}>
+                If you were to be admitted into the Cohort, kindly let us know
+                what you plan to achieve.
+              </p>
+
+              <div className={styles.fileUploadWrapper}>
+                <input
+                  type="file"
+                  id="fileUpload"
+                  className={styles.fileInput}
+                  accept=".pdf"
+                />
+                <label htmlFor="fileUpload" className={styles.fileLabel}>
+                  Upload PDF
+                </label>
+                <span className={styles.fileNote}>File in PDF only</span>
+              </div>
+            </div>
+
             {/* Buttons */}
             <div className={styles.btnGroup}>
               <button
@@ -301,7 +347,7 @@ export default function SignupForm() {
               <h3 className={styles.normalLabel}>
                 Describe your salvation experience
               </h3>
-           
+
               <textarea
                 placeholder="Tell us about your salvation experience"
                 className={styles.textarea}
@@ -313,7 +359,7 @@ export default function SignupForm() {
               <h3 className={styles.normalLabel}>
                 Describe your salvation experience
               </h3>
-              
+
               <textarea
                 placeholder="Tell us about your salvation experience"
                 className={styles.textarea}
@@ -323,22 +369,23 @@ export default function SignupForm() {
             {/* Section C */}
             <div className={styles.formGroup}>
               <h3 className={styles.normalLabel}>Ministry Involvement</h3>
-              <div className={styles.checkboxRow}>
-                <label>
-                  <input type="checkbox" /> Choir
-                </label>
-                <label>
-                  <input type="checkbox" /> Ushering
-                </label>
-                <label>
-                  <input type="checkbox" /> Prayer Team
-                </label>
-                <label>
-                  <input type="checkbox" /> Evangelism
-                </label>
+              <div className={styles.check}>
+                <div className={styles.checkboxRow}>
+                  <label>
+                    <input type="checkbox" /> Choir
+                  </label>
+                  <label>
+                    <input type="checkbox" /> Ushering
+                  </label>
+                  <label>
+                    <input type="checkbox" /> Prayer Team
+                  </label>
+                  <label>
+                    <input type="checkbox" /> Evangelism
+                  </label>
+                </div>
               </div>
             </div>
-
 
             {/* Buttons */}
             <div className={styles.btnGroup}>

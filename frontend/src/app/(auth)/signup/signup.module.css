@@ -254,7 +254,7 @@
 }
 
 .backBtn {
-  background: #f3f4f6;
+  background: rgba(128, 128, 128, 0.268);
   margin-right: 1rem;
   color: #374151;
 }
@@ -340,9 +340,7 @@
   display: flex;
   flex-direction: column; 
   gap: 1rem;          
-  width: 100%;
-  max-width: 400px;  
-  /* background-color: red;      */
+  width: 100%;  
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
@@ -375,7 +373,7 @@
 
 .dropdownToggle {
   width: 100%;
-  padding: 0.9rem 1rem;
+  padding: 0.9rem .2rem;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: #f9fafb;
@@ -446,6 +444,58 @@
   }
 }
 
+.sopContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* max-width: 500px; */
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.sopLabel {
+  font-weight: 200;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.sopDescription {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.fileUploadWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fileInput {
+  display: none; /* hide default file input */
+}
+
+.fileLabel {
+  display: inline-block;
+  padding: 10px 20px;
+   background: #0070f3;
+  color: #fff;
+  font-weight: 200;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.fileLabel:hover {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  transform: scale(1.05);
+}
+
+.fileNote {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
 
 
 

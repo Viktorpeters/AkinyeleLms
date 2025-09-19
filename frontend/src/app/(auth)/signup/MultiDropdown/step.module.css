@@ -1,30 +1,30 @@
 .container {
-  width: 100%;
-  max-width: 600px;
   margin: 1rem auto;
   font-family: "Poppins", sans-serif;
+  /* background-color: red; */
+  width: 100%;
 }
 
 .boxContainer {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column; 
+  gap: 0.75rem;
   margin-bottom: 1rem;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .box {
-  flex: 1;
-  min-width: 150px;
-  padding: 0.6rem 1rem;
+  width: 100%; /* full container width */
+  padding: 0.75rem .2rem;
   border: 1px solid #4a90e2;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f5f8ff;
   font-weight: 500;
   cursor: default;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .box:hover {
@@ -38,39 +38,47 @@
 
 .dropdownWrapper {
   position: relative;
+  width: 100%;
 }
 
 .selectTrigger {
-  padding: 0.6rem 1rem;
+  width: 100%;
+  padding: 0.75rem 0.2rem;
   border: 1px solid #4a90e2;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #f5f8ff;
   cursor: pointer;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .selectTrigger:hover {
   background: #e1ebff;
 }
-
 .dropdown {
-  position: absolute;
-  top: 110%;
-  left: 0;
+  position: relative; /* instead of absolute */
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #fff;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  max-height: 350px;
-  overflow-y: auto;
-  transition: all 0.3s ease;
-  z-index: 50;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: all 0.3s ease; /* smooth falling */
+  margin-top: 0.5rem; /* space below trigger */
+  padding: 0.5rem 0;
+  z-index: 10;
 }
 
+/* Optional: make zones and districts slide smoothly */
+.zoneList,
+.districtList {
+  margin-left: 1rem;
+  border-left: 2px dashed #cbd5e1;
+  padding-left: 0.5rem;
+  transition: all 0.3s ease; /* smooth slide for inner lists */
+}
 .centreItem,
 .zoneItem,
 .districtItem {
@@ -80,13 +88,14 @@
 .centreName,
 .zoneName,
 .districtItem {
-  padding: 0.6rem 0.8rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
   cursor: pointer;
   font-size: 0.95rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .centreName:hover,
@@ -98,27 +107,34 @@
 
 .arrowIcon {
   margin-left: 6px;
+  transition: transform 0.2s;
 }
 
-.zoneList,
-.districtList {
-  margin-left: 1rem;
-  border-left: 2px dashed #cbd5e1;
-  padding-left: 0.5rem;
-  transition: max-height 0.2s ease;
+.rotate {
+  transform: rotate(180deg);
 }
+
+.active {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+
 
 /* Responsive */
 @media (max-width: 600px) {
   .boxContainer {
     flex-direction: column;
+    gap: 0.5rem;
   }
+
   .zoneList,
   .districtList {
     margin-left: 0.5rem;
     border-left: 2px solid #cbd5e1;
   }
+
   .dropdown {
-    max-height: 250px;
+    max-height: 300px;
   }
 }
