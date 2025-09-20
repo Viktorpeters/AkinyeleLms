@@ -1,21 +1,23 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./OTPVerification.css";
 import Link from "next/link";
 import Image from "next/image"; 
 
 export default function OTPVerification() {
   const inputsRef = useRef<HTMLInputElement[]>([]);
+  const [isComplete, setIsComplete] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const value = e.target.value;
     if (/^\d$/.test(value)) {
-    
       if (index < 5) inputsRef.current[index + 1].focus();
     } else if (value === "") {
       if (index > 0) inputsRef.current[index - 1].focus();
     }
     e.target.value = value.slice(-1);
+
+    checkComplete();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
@@ -34,12 +36,22 @@ export default function OTPVerification() {
         }
       });
       inputsRef.current[5].focus();
+      checkComplete();
     }
   };
 
+  const checkComplete = () => {
+    const allFilled = inputsRef.current.every(input => input?.value.length === 1);
+    setIsComplete(allFilled);
+  };
+
+  // Optional: check on mount to handle prefilled OTPs
+  useEffect(() => {
+    checkComplete();
+  }, []);
+
   return (
     <div className="otp-container">
-      {/* Logo at top-left */}
       <div className="otp-logo">
         <Image
           src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg" 
@@ -80,7 +92,11 @@ export default function OTPVerification() {
             </Link>
           </p>
 
-          <button type="button" className="otp-button">
+          <button
+            type="button"
+            className={`otp-button ${!isComplete ? "otp-button-disabled" : ""}`}
+            disabled={!isComplete}
+          >
             Proceed
           </button>
         </form>

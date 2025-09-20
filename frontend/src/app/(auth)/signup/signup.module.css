@@ -369,24 +369,35 @@
 .dropdownWrapper {
   grid-column: span 2;
   position: relative;
+  width: 100%; /* force wrapper to control width */
+  display: inline-block; /* keep content tied to trigger */
 }
 
 .dropdownToggle {
-  width: 100%;
-  padding: 0.9rem .2rem;
+  width: 100%; /* button full width of wrapper */
+  box-sizing: border-box;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;          /* ✅ keeps it same width as toggle */
+  width: 100%;       /* ✅ same width */
+  box-sizing: border-box;
+  background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  background: #f9fafb;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  margin-top: 0.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 10;
 }
+
 
 .dropdownToggle:hover {
   background: #f3f4f6;
+  cursor: pointer;
 }
 
 .icon {
@@ -397,11 +408,11 @@
 
 .iconOpen {
   font-size: 1.5rem;
-  transform: rotate(45deg); /* makes + become × */
+  transform: rotate(45deg);
   transition: transform 0.3s ease;
 }
 
-.dropdownMenu {
+/* .dropdownMenu {
   position: absolute;
   top: 110%;
   left: 0;
@@ -413,13 +424,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   animation: fadeIn 0.3s ease forwards;
   z-index: 10;
-}
+} */
 
 .dropdownItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0.8rem 1rem; */
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -488,7 +498,8 @@
 }
 
 .fileLabel:hover {
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  /* background: linear-gradient(90deg, #4f46e5, #7c3aed); */
+    background: #0071f3c6;
   transform: scale(1.05);
 }
 
@@ -535,11 +546,40 @@
 
   .form input,
   .form select {
-    width: 100%; /* all inputs same width */
+    width: 100%; 
   }
 
   .btnGroup {
     display: flex;
     gap: 1rem;
   }
+
+  .dropdownWrapper {
+  grid-column: span 2;
+  position: relative;
+  width: 100%; /* force wrapper to control width */
+  display: inline-block; /* keep content tied to trigger */
+}
+
+.dropdownToggle {
+  width: 100%; /* button full width of wrapper */
+  box-sizing: border-box;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;          /* ✅ keeps it same width as toggle */
+  width: 100%;       /* ✅ same width */
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 10;
+}
+
 }

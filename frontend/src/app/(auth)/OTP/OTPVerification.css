@@ -114,6 +114,22 @@
   z-index: 10;
 }
 
+.otp-button-disabled {
+  background-color: #4299e1;
+  /* filter: blur(1px); */
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.otp-button-disabled:hover {
+  background-color: #4299e1;
+  transform: none;
+  box-shadow: none;
+}
+
+
 
 /* Responsive */
 @media (max-width: 480px) {

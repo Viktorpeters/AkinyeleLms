@@ -109,14 +109,14 @@ export default function SignupForm() {
 
             {/* Buttons */}
             <div className={styles.btnGroup}>
-              <button
+              {/* <button
                 type="button"
                 className={styles.backBtn}
                 onClick={handleBack}
                 disabled={step === 1}
               >
                 Back
-              </button>
+              </button> */}
               <button
                 type="button"
                 className={styles.nextBtn}
@@ -185,8 +185,8 @@ export default function SignupForm() {
       </select>
     </div>
 
-    {/* Career interest */}
-    <div className={styles.formGroup}>
+   
+    {/* <div className={styles.formGroup}>
       <label>Career interest</label>
       <select>
         <option value="">Select career interest</option>
@@ -194,7 +194,19 @@ export default function SignupForm() {
         <option>Design</option>
         <option>Management</option>
       </select>
+    </div> */}
+
+     {/* Courses Select */}
+    <div className={styles.formGroup}>
+      <label>Select your course</label>
+      <select className={styles.courseSelect}>
+        <option value="">Select a course</option>
+        {courses.map((course, index) => (
+          <option key={index} value={course}>{course}</option>
+        ))}
+      </select>
     </div>
+
 
     {/* Strengths */}
     <div className={styles.formGroup}>
@@ -218,17 +230,6 @@ export default function SignupForm() {
     <div className={styles.formGroup}>
       <label>Certifications</label>
       <textarea placeholder="e.g., AWS Cloud Practitioner..."></textarea>
-    </div>
-
-    {/* Courses Select */}
-    <div className={styles.formGroup}>
-      <label>Select your course</label>
-      <select className={styles.courseSelect}>
-        <option value="">Select a course</option>
-        {courses.map((course, index) => (
-          <option key={index} value={course}>{course}</option>
-        ))}
-      </select>
     </div>
 
     {/* Buttons */}

@@ -17,7 +17,7 @@ export default function SignIn() {
       setIsLoading(false);
       console.log("OTP sent to:", email);
       router.push("/OTP");
-    }, 2000);
+    }, 350);
   };
 
   return (
