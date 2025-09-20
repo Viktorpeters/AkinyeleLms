@@ -3,6 +3,9 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-poppins), sans-serif;
 }
 
 .videoWrapper {
@@ -16,16 +19,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: inset(0 100% 0 0); /* initial hidden state */
+  clip-path: inset(0 100% 0 0);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 2;
 }
-
 .content {
   position: relative;
   z-index: 3;
@@ -36,20 +38,23 @@
   height: 100%;
   padding-left: 8%;
   color: #fff;
+
+  width: 50%;
 }
 
 .headline {
-  font-size: 3rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .subhead {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .btn {
-  background: #a17b2d;
+  background: rgba(255, 68, 0, 0.891);
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 4px;
@@ -59,7 +64,38 @@
 }
 
 .btn:hover {
-  background: #916b24;
+  background: rgb(255, 68, 0);
+}
+
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-left: -10px; /* overlap effect */
+}
+
+.avatars img:first-child {
+  margin-left: 0; /* no overlap for first image */
+}
+
+@media (max-width: 768px) {
+  .avatars img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* Responsive */
@@ -72,5 +108,8 @@
   }
   .btn {
     font-size: 1rem;
+  }
+  .content { 
+    width: 100%;
   }
 }

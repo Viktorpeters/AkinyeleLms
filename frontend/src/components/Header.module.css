@@ -125,6 +125,10 @@
   flex-shrink: 0;
 }
 
+.menu {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -180,5 +184,8 @@
   }
   .actions {
     display: none;
+  }
+  .menu {
+    display: block;
   }
 }

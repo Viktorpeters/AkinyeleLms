@@ -10,6 +10,7 @@ import {
   Heart,
   FlaskConical,
   Monitor,
+  Menu,
   Globe,
 } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
@@ -96,6 +97,10 @@ const Header = () => {
       <div className={styles.actions}>
         <Link href="/"><button className={styles.primaryBtn}>Sign In</button></Link>
         <Link href="/"><button className={styles.secondaryBtn}>Join Now</button></Link>
+      </div>
+
+      <div className={styles.menu}>
+         <Menu />
       </div>
     </header>
   );

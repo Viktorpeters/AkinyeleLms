@@ -6,7 +6,8 @@ import styles from "./Hero.module.css";
 
 const slides = [
   {
-    video: "/video1.mp4",
+    video:
+      "https://res.cloudinary.com/ddlnqthao/video/upload/v1758382338/WhatsApp_Video_2025-09-20_at_14.20.13_6ff877dd_aowkka.mp4",
     title: "Discover Your God-Given Purpose",
     subtitle:
       "At KICA, we help young people uncover their unique assignment, build confidence, and step boldly into their destiny.",
@@ -14,7 +15,8 @@ const slides = [
     link: "#get-started",
   },
   {
-    video: "/video2.mp4",
+    video:
+      "https://res.cloudinary.com/ddlnqthao/video/upload/v1758383534/WhatsApp_Video_2025-09-20_at_14.20.13_abd9fabc_cn9sqq.mp4",
     title: "Grow Spiritually, Lead Powerfully",
     subtitle:
       "Through deep spiritual formation and mentorship, you will cultivate intimacy with God and develop the authority to influence your world.",
@@ -22,7 +24,8 @@ const slides = [
     link: "#get-started",
   },
   {
-    video: "/video1.mp4",
+    video:
+      "https://res.cloudinary.com/ddlnqthao/video/upload/v1758384010/WhatsApp_Video_2025-09-20_at_14.20.44_77b48677_ya2vxm.mp4",
     title: "Master Productivity & Mindset",
     subtitle:
       "Break free from procrastination, renew your mind, and build daily habits that position you for excellence and impact.",
@@ -30,7 +33,8 @@ const slides = [
     link: "#get-started",
   },
   {
-    video: "/videos/delivery.mp4",
+    video:
+      "https://res.cloudinary.com/ddlnqthao/video/upload/v1758384216/WhatsApp_Video_2025-09-20_at_14.20.37_572958cb_c3zywb.mp4",
     title: "Thrive in Business and Career",
     subtitle:
       "Learn financial intelligence, entrepreneurship, and career pathways that align with Kingdom values and long-term success.",
@@ -38,7 +42,8 @@ const slides = [
     link: "#get-started",
   },
   {
-    video: "/video2.mp4",
+    video:
+      "https://res.cloudinary.com/ddlnqthao/video/upload/v1758384343/WhatsApp_Video_2025-09-20_at_14.20.23_5184bb4f_zlldzx.mp4",
     title: "Develop Leadership & Influence",
     subtitle:
       "Gain the skills to lead with vision, communicate with confidence, and create meaningful change in your community.",
@@ -46,7 +51,8 @@ const slides = [
     link: "#get-started",
   },
   {
-    video: "/video1.mp4",
+    video:
+      "https://res.cloudinary.com/ddlnqthao/video/upload/v1758383534/WhatsApp_Video_2025-09-20_at_14.20.13_abd9fabc_cn9sqq.mp4",
     title: "Transform Communities, Impact Generations",
     subtitle:
       "Beyond personal growth, KICA equips you to serve, inspire, and bring transformation to society as a Kingdom ambassador.",
@@ -123,9 +129,38 @@ export default function HeroSlider() {
         <p ref={subtitleRef} className={styles.subhead}>
           {slide.subtitle}
         </p>
-        <a ref={ctaRef} href={slide.link} className={styles.btn}>
-          {slide.cta}
-        </a>
+        <div className={styles.ctaWrapper}>
+          <a ref={ctaRef} href={slide.link} className={styles.btn}>
+            {slide.cta}
+          </a>
+
+          <div className={styles.avatars}>
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="user"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="user"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="user"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/men/12.jpg"
+              alt="user"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/men/52.jpg"
+              alt="user"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/women/24.jpg"
+              alt="user"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
