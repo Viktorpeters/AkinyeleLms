@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./signup.module.css";
 import { Plus, ChevronDown, ChevronUp, X } from "lucide-react";
-import MultiDropdown from "./MultiDropdown/page";
+import MultiDropdown from "../../MultiDropdown/page";
 
 export default function SignupForm() {
   const [step, setStep] = useState(1); // track current step
