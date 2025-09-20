@@ -126,10 +126,9 @@ export default function SignupForm() {
             </div>
 
             <div className="bottom-right-footer">
-              <span style={{ fontSize: "4px" }}>
+              <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
-              </span>
-
+              </p>
               <span>&copy; 2025</span>
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>

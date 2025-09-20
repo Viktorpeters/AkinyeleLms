@@ -509,33 +509,34 @@
 }
 
 .bottom-right-footer {
-  position: fixed;       
-  bottom: 0;            
-  right: 0;              
-  width: 100%;           
-  background: #f9fafb;   
-  text-align: right;     
-  font-size: 0.75rem;    
-  /* padding: 0.4rem 1rem;   */
-  color: #555;           
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #f9fafb;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #555;
   border-top: 1px solid #e5e7eb;
-  z-index: 999;         
+  z-index: 999;
+  padding: 2px 8px;
 }
 
+.bottom-right-footer p,
 .bottom-right-footer span,
 .bottom-right-footer h6 {
-  margin-left: 1rem;
-  /* display: inline;      */
+  display: inline;       
+  margin: 0 6px;          
   font-weight: normal;
+  vertical-align: middle; 
 }
 
 .bottom-right-footer h6 {
-  font-size: 0.2rem;
+  font-size: 0.75rem;    
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin: 0;
-  display: inline;
 }
+
 
 
 
