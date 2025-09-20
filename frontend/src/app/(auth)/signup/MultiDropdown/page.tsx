@@ -605,7 +605,10 @@ const MultiDropdown: React.FC = () => {
             <X
               size={16}
               className={styles.cancelIcon}
-              onClick={() => setSelectedCentre("")}
+              onClick={() => {
+                setSelectedCentre("");
+                setShowDropdown(true); // reopen dropdown for reselection
+              }}
             />
           </div>
         )}
@@ -615,7 +618,10 @@ const MultiDropdown: React.FC = () => {
             <X
               size={16}
               className={styles.cancelIcon}
-              onClick={() => setSelectedZone("")}
+              onClick={() => {
+                setSelectedZone("");
+                setShowDropdown(true); // reopen dropdown for reselection
+              }}
             />
           </div>
         )}
@@ -625,7 +631,10 @@ const MultiDropdown: React.FC = () => {
             <X
               size={16}
               className={styles.cancelIcon}
-              onClick={() => setSelectedDistrict("")}
+              onClick={() => {
+                setSelectedDistrict("");
+                setShowDropdown(true); // reopen dropdown for reselection
+              }}
             />
           </div>
         )}

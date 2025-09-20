@@ -8,19 +8,18 @@ import MultiDropdown from "./MultiDropdown/page";
 export default function SignupForm() {
   const [step, setStep] = useState(1); // track current step
 
-
   const courses = [
-  "Spiritual Formation & Kingdom Identity",
-  "Purpose Discovery & Life Mastery",
-  "Mindshift & Productivity Mastery",
-  "Business, Career & Financial Intelligence",
-  "Leadership & Capacity Building",
-  "Public Speaking & Influence",
-  "Marriage & Relationship Intelligence",
-  "Special Capacity-Building Labs",
-  "Digital Influence & Media Mastery",
-  "Generational Impact Modules"
-];
+    "Spiritual Formation & Kingdom Identity",
+    "Purpose Discovery & Life Mastery",
+    "Mindshift & Productivity Mastery",
+    "Business, Career & Financial Intelligence",
+    "Leadership & Capacity Building",
+    "Public Speaking & Influence",
+    "Marriage & Relationship Intelligence",
+    "Special Capacity-Building Labs",
+    "Digital Influence & Media Mastery",
+    "Generational Impact Modules",
+  ];
 
   // Titles for each step
   const stepTitles = [
@@ -126,11 +125,14 @@ export default function SignupForm() {
               </button>
             </div>
 
-            {/* <div className="bottom-right-footer">
-              <span>Kingdom Impact Coaching Academy</span>
+            <div className="bottom-right-footer">
+              <span style={{ fontSize: "4px" }}>
+                Kingdom Impact Coaching Academy
+              </span>
+
               <span>&copy; 2025</span>
               <h6>KLOUD6 TECHNOLOGIES</h6>
-            </div> */}
+            </div>
           </form>
         )}
 
@@ -172,21 +174,20 @@ export default function SignupForm() {
           </form>
         )}
 
-    {step === 3 && (
-  <form className={styles.form}>
-    {/* Current education */}
-    <div className={styles.formGroup}>
-      <label>Current educational pursuit</label>
-      <select>
-        <option value="">Select your pursuit</option>
-        <option>Undergraduate</option>
-        <option>Graduate</option>
-        <option>Postgraduate</option>
-      </select>
-    </div>
+        {step === 3 && (
+          <form className={styles.form}>
+            {/* Current education */}
+            <div className={styles.formGroup}>
+              <label>Current educational pursuit</label>
+              <select>
+                <option value="">Select your pursuit</option>
+                <option>Undergraduate</option>
+                <option>Graduate</option>
+                <option>Postgraduate</option>
+              </select>
+            </div>
 
-   
-    {/* <div className={styles.formGroup}>
+            {/* <div className={styles.formGroup}>
       <label>Career interest</label>
       <select>
         <option value="">Select career interest</option>
@@ -196,62 +197,62 @@ export default function SignupForm() {
       </select>
     </div> */}
 
-     {/* Courses Select */}
-    <div className={styles.formGroup}>
-      <label>Select your course</label>
-      <select className={styles.courseSelect}>
-        <option value="">Select a course</option>
-        {courses.map((course, index) => (
-          <option key={index} value={course}>{course}</option>
-        ))}
-      </select>
-    </div>
+            {/* Courses Select */}
+            <div className={styles.formGroup}>
+              <label>Select your course</label>
+              <select className={styles.courseSelect}>
+                <option value="">Select a course</option>
+                {courses.map((course, index) => (
+                  <option key={index} value={course}>
+                    {course}
+                  </option>
+                ))}
+              </select>
+            </div>
 
+            {/* Strengths */}
+            <div className={styles.formGroup}>
+              <label>Strengths</label>
+              <textarea placeholder="e.g., Leadership, time management..."></textarea>
+            </div>
 
-    {/* Strengths */}
-    <div className={styles.formGroup}>
-      <label>Strengths</label>
-      <textarea placeholder="e.g., Leadership, time management..."></textarea>
-    </div>
+            {/* Weaknesses */}
+            <div className={styles.formGroup}>
+              <label>Weaknesses</label>
+              <textarea placeholder="e.g., Procrastination, public speaking..."></textarea>
+            </div>
 
-    {/* Weaknesses */}
-    <div className={styles.formGroup}>
-      <label>Weaknesses</label>
-      <textarea placeholder="e.g., Procrastination, public speaking..."></textarea>
-    </div>
+            {/* Skills/Hobbies */}
+            <div className={styles.formGroup}>
+              <label>Skills / Hobbies</label>
+              <textarea placeholder="e.g., Python, painting, hiking..."></textarea>
+            </div>
 
-    {/* Skills/Hobbies */}
-    <div className={styles.formGroup}>
-      <label>Skills / Hobbies</label>
-      <textarea placeholder="e.g., Python, painting, hiking..."></textarea>
-    </div>
+            {/* Certifications */}
+            <div className={styles.formGroup}>
+              <label>Certifications</label>
+              <textarea placeholder="e.g., AWS Cloud Practitioner..."></textarea>
+            </div>
 
-    {/* Certifications */}
-    <div className={styles.formGroup}>
-      <label>Certifications</label>
-      <textarea placeholder="e.g., AWS Cloud Practitioner..."></textarea>
-    </div>
-
-    {/* Buttons */}
-    <div className={styles.btnGroup}>
-      <button
-        type="button"
-        className={styles.backBtn}
-        onClick={handleBack}
-      >
-        Back
-      </button>
-      <button
-        type="button"
-        className={styles.nextBtn}
-        onClick={handleNext}
-      >
-        Next
-      </button>
-    </div>
-  </form>
-)}
-
+            {/* Buttons */}
+            <div className={styles.btnGroup}>
+              <button
+                type="button"
+                className={styles.backBtn}
+                onClick={handleBack}
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                className={styles.nextBtn}
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            </div>
+          </form>
+        )}
 
         {step === 4 && (
           <form className={styles.formm}>
