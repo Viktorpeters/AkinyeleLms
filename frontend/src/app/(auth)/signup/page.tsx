@@ -129,7 +129,7 @@ export default function SignupForm() {
               <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
               </p>
-              <span>&copy; 2025</span>
+              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
@@ -169,6 +169,14 @@ export default function SignupForm() {
               >
                 Next
               </button>
+            </div>
+
+             <div className="bottom-right-footer">
+              <p style={{ fontSize: "13px" }}>
+                Kingdom Impact Coaching Academy
+              </p>
+              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
         )}
@@ -249,6 +257,14 @@ export default function SignupForm() {
               >
                 Next
               </button>
+            </div>
+
+             <div className="bottom-right-footer">
+              <p style={{ fontSize: "13px" }}>
+                Kingdom Impact Coaching Academy
+              </p>
+              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
         )}
@@ -338,6 +354,14 @@ export default function SignupForm() {
                 Next
               </button>
             </div>
+
+             <div className="bottom-right-footer">
+              <p style={{ fontSize: "13px" }}>
+                Kingdom Impact Coaching Academy
+              </p>
+              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              <h6>KLOUD6 TECHNOLOGIES</h6>
+            </div>
           </form>
         )}
 
@@ -401,9 +425,19 @@ export default function SignupForm() {
                 Complete Profile
               </button>
             </div>
-          </form>
+
+             <div className="bottom-right-footer">
+              <p style={{ fontSize: "13px" }}>
+                Kingdom Impact Coaching Academy
+              </p>
+              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              <h6>KLOUD6 TECHNOLOGIES</h6>
+            </div>
+          </form>          
         )}
       </div>
+
+      
     </section>
   );
 }

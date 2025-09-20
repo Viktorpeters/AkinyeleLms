@@ -508,19 +508,7 @@
   color: #6b7280;
 }
 
-.bottom-right-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  background: #f9fafb;
-  text-align: right;
-  font-size: 0.75rem;
-  color: #555;
-  border-top: 1px solid #e5e7eb;
-  z-index: 999;
-  padding: 2px 8px;
-}
+
 
 .bottom-right-footer p,
 .bottom-right-footer span,
