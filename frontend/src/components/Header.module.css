@@ -1,5 +1,3 @@
-
-
 .header {
   display: flex;
   align-items: center;
@@ -10,14 +8,15 @@
   border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
+  background: #fff;
 }
-
 
 .logo {
   display: flex;
   align-items: center;
 }
+
 
 .navList {
   display: flex;
@@ -27,83 +26,159 @@
   padding: 0;
 }
 
-.navList li {
-  display: flex;
-  align-items: center;
+.navList li a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--foreground);
+  transition: color 0.2s ease;
+  list-style: none;
 }
 
-.navList li a {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  text-decoration: none;
-  color: var(--foreground);
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
+/* .navList li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+} */
 
 .navList li a:hover {
-  color: #2563eb; 
+  color: #2563eb;
+}
+.navList li a:hover::after {
+  width: 100%;
 }
 
 .icon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownTrigger {
+  background: none;
+  border: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  color: var(--foreground);
+  font-size: 0.95rem;
+}
+
+.dropdownTrigger.active .icon {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 300%;
+  left: 0;
+  width: 600px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  animation: fadeIn 0.25s ease forwards;
+  z-index: 2000;
+
+  /* 👇 make it grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 equal columns */
+  gap: 0.8rem; /* spacing between items */
+}
+
+.dropdownMenu li {
+  list-style: none;
+}
+
+.dropdownMenu li a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownMenu li a:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+
+.courseIcon {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .primaryBtn,
 .secondaryBtn {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
+  padding: 0.65rem 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   border: none;
 }
-
 
 .primaryBtn {
-  background: var(--gradient); 
-  color: white;
-  padding: 0.65rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
+  background: transparent;
+  color: var(--foreground);
 }
-
 .primaryBtn:hover {
-  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.05);
 }
-
-
 
 .secondaryBtn {
-  background-color: transparent;
-  color: #2563eb;
-  border: 1px solid #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
-
 .secondaryBtn:hover {
-  background: var(--gradient);
-  color: white;
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
 
 @media (max-width: 768px) {
   .navList {
-    display: none; 
+    display: none;
   }
-
   .actions {
-    display: none; 
+    display: none;
   }
 }

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./signup.module.css";
-import { Plus, ChevronDown, ChevronUp, X } from "lucide-react";
+import { Plus, ChevronDown, ChevronUp, X,Upload } from "lucide-react";
 import MultiDropdown from "../../MultiDropdown/page";
 
 export default function SignupForm() {
@@ -125,7 +125,7 @@ export default function SignupForm() {
               </button>
             </div>
 
-            <div className="bottom-right-footer">
+            <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
               </p>
@@ -171,7 +171,7 @@ export default function SignupForm() {
               </button>
             </div>
 
-             <div className="bottom-right-footer">
+            <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
               </p>
@@ -259,7 +259,7 @@ export default function SignupForm() {
               </button>
             </div>
 
-             <div className="bottom-right-footer">
+               <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
               </p>
@@ -331,7 +331,7 @@ export default function SignupForm() {
                   accept=".pdf"
                 />
                 <label htmlFor="fileUpload" className={styles.fileLabel}>
-                  Upload PDF
+                   <Upload height={14} width={15} className={styles.icon} /> Upload PDF
                 </label>
                 <span className={styles.fileNote}>File in PDF only</span>
               </div>
@@ -355,7 +355,7 @@ export default function SignupForm() {
               </button>
             </div>
 
-             <div className="bottom-right-footer">
+              <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
               </p>
@@ -426,7 +426,7 @@ export default function SignupForm() {
               </button>
             </div>
 
-             <div className="bottom-right-footer">
+               <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
                 Kingdom Impact Coaching Academy
               </p>
