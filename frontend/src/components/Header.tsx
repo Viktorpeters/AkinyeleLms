@@ -12,15 +12,33 @@ import {
   Monitor,
   Menu,
   Globe,
+  TextAlignStart,
+  X,
 } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import Button2 from "./Button2";
+import Option from "./Option"
+
 
 const Header = () => {
-  const [showCourses, setShowCourses] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  // Desktop states
+  const [showCoursesDesktop, setShowCoursesDesktop] = useState(false);
+  const [showProgramsDesktop, setShowProgramsDesktop] = useState(false);
+  const [showGetInvolvedDesktop, setShowGetInvolvedDesktop] = useState(false);
+
+  // Mobile states
+  const [showCoursesMobile, setShowCoursesMobile] = useState(false);
+  const [showProgramsMobile, setShowProgramsMobile] = useState(false);
+  const [showGetInvolvedMobile, setShowGetInvolvedMobile] = useState(false);
+
+  const coursesRef = useRef<HTMLLIElement>(null);
+  const programsRef = useRef<HTMLLIElement>(null);
+  const getInvolvedRef = useRef<HTMLLIElement>(null);
 
   const courses = [
     { name: "Spiritual Formation & Kingdom Identity", icon: BookOpen },
@@ -35,12 +53,25 @@ const Header = () => {
     { name: "Generational Impact Modules", icon: Globe },
   ];
 
-  // Close dropdown on outside click
+  const programs = Array.from({ length: 10 }, (_, i) => ({
+    name: `Program ${i + 1}`,
+  }));
+
+  const getInvolvedItems = [
+    { name: "Support & Donate", href: "/support" },
+    { name: "Partner With Us", href: "/partner" },
+    { name: "Volunteer", href: "/volunteer" },
+  ];
+
+  // Close desktop dropdowns on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setShowCourses(false);
-      }
+      if (coursesRef.current && !coursesRef.current.contains(e.target as Node))
+        setShowCoursesDesktop(false);
+      if (programsRef.current && !programsRef.current.contains(e.target as Node))
+        setShowProgramsDesktop(false);
+      if (getInvolvedRef.current && !getInvolvedRef.current.contains(e.target as Node))
+        setShowGetInvolvedDesktop(false);
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -48,6 +79,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
+      {/* Logo */}
       <div className={styles.logo}>
         <Link href="/">
           <Image
@@ -60,25 +92,123 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Navigation */}
+      {/* Desktop Navigation */}
       <nav className={styles.nav} aria-label="Main navigation">
         <ul className={styles.navList}>
-          <li className={styles.dropdown} ref={dropdownRef}>
+          {/* Courses */}
+          <li className={styles.dropdown} ref={coursesRef}>
             <button
-              className={`${styles.dropdownTrigger} ${
-                showCourses ? styles.active : ""
-              }`}
-              aria-expanded={showCourses}
-              onClick={() => setShowCourses(!showCourses)}
+              className={`${styles.dropdownTrigger} ${showCoursesDesktop ? styles.active : ""}`}
+              aria-expanded={showCoursesDesktop}
+              onClick={() => setShowCoursesDesktop(prev => !prev)}
             >
-              Courses <ChevronDown className={styles.icon} />
+              Programs <ChevronDown className={styles.icon} />
             </button>
-            {showCourses && (
-              <ul className={styles.dropdownMenu}>
-                {courses.map(({ name, icon: Icon }, i) => (
+            {showCoursesDesktop && (
+              <div className={styles.coursesDropdown}>
+                <div className={styles.courseLogo}>
+                  <Image
+                    src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg"
+                    alt="Courses Logo"
+                    width={90}
+                    height={40}
+                  />
+                </div>
+                <ul className={styles.courseList}>
+                  {courses.map(({ name, icon: Icon }, i) => (
+                    <li key={i}>
+                      <Link href={`/Courses/${i}`}>
+                        <Icon size={18} className={styles.courseIcon} />
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
+
+          {/* About Us */}
+          <li>
+            <Link href="/">About Us</Link>
+          </li>
+
+          {/* Mentorship */}
+          <li>
+            <Link href="/">Mentorship</Link>
+          </li>
+
+          {/* Get Involved */}
+          <li className={styles.dropdownn} ref={getInvolvedRef}>
+            <button
+              className={`${styles.dropdownTriggerr} ${showGetInvolvedDesktop ? styles.active : ""}`}
+              aria-expanded={showGetInvolvedDesktop}
+              onClick={() => setShowGetInvolvedDesktop(prev => !prev)}
+            >
+              Get Involved <ChevronDown className={styles.icon} />
+            </button>
+            {showGetInvolvedDesktop && (
+              <ul className={styles.dropdownMenuu}>
+                {getInvolvedItems.map(({ name, href }, i) => (
                   <li key={i}>
-                    <Link href={`/courses/${i}`}>
-                      <Icon size={18} className={styles.courseIcon} />
+                    <Link href={href}>{name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        </ul>
+      </nav>
+
+      {/* Actions */}
+      <div className={styles.actions}>
+        <Link href="/signin">
+        {/* <button className={styles.primaryBtn}>Sign In</button> */}
+        <Button2>Sign in</Button2>
+        </Link>
+        <Link href="/"><button className={styles.secondaryBtnn}>Join Now</button></Link>
+      </div>
+
+      {/* Mobile Menu Icon */}
+      <div className={styles.menu} onClick={() => setMobileNavOpen(true)}>
+        <TextAlignStart size={24} />
+      </div>
+
+      {/* Mobile Nav */}
+      <div className={`${styles.mobileNav} ${mobileNavOpen ? styles.open : ""}`}>
+        <div className={styles.mobileNavHeader}>
+          <Link href="/">
+            <Image
+              src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg"
+              alt="logo"
+              height={50}
+              width={70}
+            />
+          </Link>
+          <button className={styles.closeBtn} onClick={() => setMobileNavOpen(false)}>
+            <X size={28} />
+          </button>
+        </div>
+
+        <ul className={styles.mobileNavList}>
+          {/* Courses */}
+          <li>
+            <button
+              className={`${styles.mobileDropdownTrigger} ${showCoursesMobile ? styles.active : ""}`}
+              onClick={() => {
+                setShowCoursesMobile(prev => !prev);
+                setShowProgramsMobile(false);
+                setShowGetInvolvedMobile(false);
+              }}
+            >
+              Programs
+              <ChevronDown className={`${styles.chevron} ${showCoursesMobile ? styles.rotate : ""}`} />
+            </button>
+            {showCoursesMobile && (
+              <ul className={styles.mobileDropdown}>
+                {courses.map(({ name }, i) => (
+                  <li key={i}>
+                    <Link href={`/courses/${i}`} onClick={() => setMobileNavOpen(false)}>
                       {name}
                     </Link>
                   </li>
@@ -87,20 +217,39 @@ const Header = () => {
             )}
           </li>
 
+
+          {/* Get Involved */}
+          <li>
+            <button
+              className={`${styles.mobileDropdownTrigger} ${showGetInvolvedMobile ? styles.active : ""}`}
+              onClick={() => {
+                setShowGetInvolvedMobile(prev => !prev);
+                setShowCoursesMobile(false);
+                setShowProgramsMobile(false);
+              }}
+            >
+              Get Involved
+              <ChevronDown className={`${styles.chevron} ${showGetInvolvedMobile ? styles.rotate : ""}`} />
+            </button>
+            {showGetInvolvedMobile && (
+              <ul className={styles.mobileDropdown}>
+                {getInvolvedItems.map(({ name, href }, i) => (
+                  <li key={i}>
+                    <Link href={href} onClick={() => setMobileNavOpen(false)}>{name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+
+          {/* Other Links */}
           <li><Link href="/">About Us</Link></li>
-          <li><Link href="/">Program</Link></li>
           <li><Link href="/">Mentorship</Link></li>
-          <li><Link href="/">Get Involved</Link></li>
+
+          {/* Buttons */}
+          <li><Link href="/"><button className={styles.primaryBtn}>Sign In</button></Link></li>
+          <li><Link href="/"><button className={styles.secondaryBtn}>Join Now</button></Link></li>
         </ul>
-      </nav>
-
-      <div className={styles.actions}>
-        <Link href="/"><button className={styles.primaryBtn}>Sign In</button></Link>
-        <Link href="/"><button className={styles.secondaryBtn}>Join Now</button></Link>
-      </div>
-
-      <div className={styles.menu}>
-         <Menu />
       </div>
     </header>
   );

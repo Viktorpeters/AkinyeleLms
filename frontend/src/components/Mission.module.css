@@ -1,0 +1,163 @@
+.section {
+  width: 100%;
+  padding: 60px 20px;
+  background: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--color-foreground);
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: blue;
+  border-radius: 2px;
+}
+
+.mission {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.missionTexts {
+  flex: 1;
+  padding: 25px 20px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.411);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.missionTexts h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.missionTexts p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.ctaBtn {
+  margin-top: 20px;
+  border: none;
+  padding: 14px 22px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, blue, #4a6cf7);
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.9s ease forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 255, 0.3);
+}
+
+/* Image */
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 0.9s ease forwards;
+}
+
+.image {
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  .mission {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .missionTexts {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .ctaBtn {
+    width: 100%;
+  }
+}

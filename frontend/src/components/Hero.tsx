@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import styles from "./Hero.module.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Button from "./Button";
+import Image from "next/image";
 
 const slides = [
   {
@@ -63,43 +66,38 @@ const slides = [
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const videoRef = useRef(null);
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const ctaRef = useRef(null);
 
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  // Animate fade in/out on slide change
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        videoRef.current,
-        { clipPath: "inset(0 100% 0 0)" },
-        {
-          clipPath: "inset(0 0% 0 0)",
-          duration: 1.8,
-          ease: "power3.inOut",
-        }
-      );
+    const tl = gsap.timeline();
 
-      gsap.fromTo(
-        [titleRef.current, subtitleRef.current, ctaRef.current],
-        { x: "100%", opacity: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 2,
-          ease: "power3.out",
-          delay: 0.6,
-        }
-      );
-    });
+    // Fade out old content instantly before updating
+    tl.fromTo(
+      [titleRef.current, subtitleRef.current, ctaRef.current],
+      { autoAlpha: 0, y: 20 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        stagger: 0.2,
+      }
+    );
 
-    return () => ctx.revert();
+    return () => {
+      tl.kill();
+    };
   }, [current]);
 
+  // Auto play slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 10000); // every 10s
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -107,10 +105,10 @@ export default function HeroSlider() {
 
   return (
     <section className={styles.hero}>
+      {/* Video background */}
       <div className={styles.videoWrapper}>
         <video
           key={slide.video}
-          ref={videoRef}
           className={styles.bgvideo}
           src={slide.video}
           autoPlay
@@ -122,6 +120,7 @@ export default function HeroSlider() {
 
       <div className={styles.overlay}></div>
 
+      {/* Content */}
       <div className={styles.content}>
         <h2 ref={titleRef} className={styles.headline}>
           {slide.title}
@@ -129,35 +128,51 @@ export default function HeroSlider() {
         <p ref={subtitleRef} className={styles.subhead}>
           {slide.subtitle}
         </p>
-        <div className={styles.ctaWrapper}>
-          <a ref={ctaRef} href={slide.link} className={styles.btn}>
-            {slide.cta}
-          </a>
-
+        <div className={styles.ctaWrapper} ref={ctaRef}>
+          <Button />
+          {/* Avatars */}
           <div className={styles.avatars}>
-            <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="user"
-            />
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="user"
-            />
-            <img
-              src="https://randomuser.me/api/portraits/women/68.jpg"
-              alt="user"
-            />
-            <img
-              src="https://randomuser.me/api/portraits/men/12.jpg"
-              alt="user"
-            />
-            <img
-              src="https://randomuser.me/api/portraits/men/52.jpg"
-              alt="user"
-            />
-            <img
-              src="https://randomuser.me/api/portraits/women/24.jpg"
-              alt="user"
+            {[
+              "https://randomuser.me/api/portraits/women/44.jpg",
+              "https://randomuser.me/api/portraits/men/32.jpg",
+              "https://randomuser.me/api/portraits/women/68.jpg",
+              "https://randomuser.me/api/portraits/men/12.jpg",
+              "https://randomuser.me/api/portraits/men/52.jpg",
+              "https://randomuser.me/api/portraits/women/24.jpg",
+            ].map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt="user"
+                width={40}
+                height={40}
+                className={styles.avatarImg}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Controls */}
+        <div className={styles.controls}>
+          <button
+            className={styles.navBtn}
+            onClick={() =>
+              setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
+            }
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            className={styles.navBtn}
+            onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
+          >
+            <ChevronRight />
+          </button>
+
+          <div className={styles.progressBar}>
+            <div
+              className={styles.progressFill}
+              style={{ width: `${((current + 1) / slides.length) * 100}%` }}
             />
           </div>
         </div>

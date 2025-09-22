@@ -17,6 +17,56 @@
   align-items: center;
 }
 
+.coursesDropdown {
+  position: absolute;
+  top: 300%;
+  left: -200px;
+  width: 850px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  animation: fadeIn 0.25s ease forwards;
+  z-index: 2000;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* logo | courses list */
+  gap: 1rem;
+}
+
+.courseLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-right: 10px;
+}
+
+.courseList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* two-column grid for courses */
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.courseList li a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.courseList li a:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
 
 .navList {
   display: flex;
@@ -35,17 +85,6 @@
   list-style: none;
 }
 
-/* .navList li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #2563eb;
-  transition: width 0.3s ease;
-} */
-
 .navList li a:hover {
   color: #2563eb;
 }
@@ -59,9 +98,64 @@
   transition: transform 0.25s ease;
 }
 
-
 .dropdown {
   position: relative;
+}
+
+/* Get Involved Dropdown */
+.dropdownn {
+  position: relative;
+}
+
+.dropdownTriggerr {
+  background: none;
+  border: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  color: var(--foreground);
+  font-size: 0.95rem;
+}
+
+.dropdownTriggerr.active .icon {
+  transform: rotate(180deg);
+}
+
+.dropdownMenuu {
+  position: absolute;
+  top: 300%;
+  left: -200%;
+  width: 400px; 
+  
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  animation: fadeIn 0.25s ease forwards;
+  z-index: 2000;
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 0.6rem;
+
+  list-style: none;
+}
+
+.dropdownMenuu li a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdownMenuu li a:hover {
+  background: #f3f4f6;
+  color: #2563eb;
 }
 
 .dropdownTrigger {
@@ -115,6 +209,54 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
+.programDropdown {
+  position: absolute;
+  top: 300%;
+  left: 0;
+  width: 600px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  animation: fadeIn 0.25s ease forwards;
+  z-index: 2000;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.programList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.programList li a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.programList li a:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+
+.programLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dropdownMenu li a:hover {
   background: #f3f4f6;
   color: #2563eb;
@@ -127,6 +269,14 @@
 
 .menu {
   display: none;
+  background-color: rgb(41, 41, 163);
+  color: #e5e7eb;
+  padding: 6px 7px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
 }
 
 @keyframes fadeIn {
@@ -140,17 +290,16 @@
   }
 }
 
-
 .actions {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1.2rem;
 }
 
 .primaryBtn,
-.secondaryBtn {
+.secondaryBtnn {
   padding: 0.65rem 1.5rem;
-  border-radius: 0.6rem;
+  border-radius: 0.2rem;
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
@@ -166,17 +315,227 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-.secondaryBtn {
+.secondaryBtnn {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #fff;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  height: 50px;
 }
-.secondaryBtn:hover {
+.secondaryBtnn:hover {
   opacity: 0.95;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
+/* Overlay */
+.mobileNavOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 999;
+}
+
+.mobileNavOverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Nav */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  /* max-width: 350px; */
+  height: 100%;
+  background: #fff;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  transition: left 0.35s ease;
+  z-index: 1000;
+}
+
+.mobileNav.open {
+  left: 0;
+}
+
+
+.mobileNavHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+/* Mobile Nav Container */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 2000;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  overflow-y: auto;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+  opacity: 0;
+}
+
+.mobileNav.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Header inside Mobile Nav */
+.mobileNavHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+  transition: transform 0.2s ease;
+}
+
+.closeBtn:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile Nav List */
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Dropdown Trigger */
+.mobileDropdownTrigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 0;
+  color: #111827;
+  transition: color 0.2s ease;
+}
+
+.mobileDropdownTrigger:hover,
+.mobileDropdownTrigger.active {
+  color: #2563eb;
+}
+
+/* Chevron */
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.mobileDropdown {
+  list-style: none;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.25s ease forwards;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Dropdown Links */
+.mobileDropdown li a {
+  text-decoration: none;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mobileDropdown li a:hover {
+  background: #e0f2fe;
+  color: #1e40af;
+}
+
+/* Buttons inside mobile nav */
+.mobileNavList .primaryBtn,
+.mobileNavList .secondaryBtn {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.primaryBtn {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.primaryBtn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.secondaryBtn:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Media Query */
+@media (min-width: 769px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+
+.menu {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .navList {

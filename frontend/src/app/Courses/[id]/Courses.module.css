@@ -1,0 +1,162 @@
+.courses {
+  overflow: hidden;
+  width: 100vw;
+  font-family: "poppins", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow-y: hidden; 
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: fit-content;
+  background: #0f172a;
+  color: white;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 100;
+}
+
+.collapsed {
+  width: 70px;
+}
+
+.toggleBtn {
+  position: absolute;
+  /* top: 10px; */
+  right: -12px;
+  background: #1e293b;
+  border: none;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggleBtn:hover {
+  background: #334155;
+}
+
+.courseList {
+  list-style: none;
+  /* padding: 2.5rem 0 0; */
+  margin: 0;
+}
+
+.courseList li {
+  margin-bottom: 0.75rem;
+}
+
+.courseList button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+  white-space: nowrap;
+  border: none;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.openBtn {
+  background: #0f172a;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.sidebarTitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.courseList button:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.activeLink {
+  background: #2563eb;
+  color: white !important;
+}
+
+.courseIcon {
+  min-width: 20px;
+}
+
+.courseText {
+  transition: opacity 0.3s ease;
+}
+.link {
+  display: block;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #cbd5e1;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.active {
+  background: #2563eb;
+  color: white;
+}
+
+.collapsed .courseText {
+  display: none;
+}
+.content {
+  flex: 1;
+  /* padding: 2rem; */
+  margin-left: 330px;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: "poppins", sans-serif;
+  transition: margin-left 0.3s ease;
+  overflow-y: scroll;
+}
+.collapsed + .content {
+  margin-left: 70px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+
