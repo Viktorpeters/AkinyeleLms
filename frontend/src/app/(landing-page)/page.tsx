@@ -17,7 +17,7 @@ const page = () => {
       <AboutKICA />
       <ImageSlider />
       <CTACard />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

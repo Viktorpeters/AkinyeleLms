@@ -30,7 +30,7 @@
   animation: fadeIn 0.25s ease forwards;
   z-index: 2000;
   display: grid;
-  grid-template-columns: 1fr 2fr; /* logo | courses list */
+  grid-template-columns: 1fr 4fr; /* logo | courses list */
   gap: 1rem;
 }
 
@@ -49,8 +49,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  
+  grid-auto-flow: row;
 }
+
+
 
 .courseList li a {
   display: flex;

@@ -39,7 +39,7 @@ const CTACard = () => {
       </div>
 
       <Link href="/signup">
-        <button className={styles.button}>Enrol today</button>
+        <button className={styles.button}>Enroll today</button>
       </Link>
     </div>
   );

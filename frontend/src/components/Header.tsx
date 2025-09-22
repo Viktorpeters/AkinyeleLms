@@ -52,7 +52,7 @@ const Header = () => {
     { name: "Digital Influence & Media Mastery", icon: Monitor },
     { name: "Generational Impact Modules", icon: Globe },
     //  { name: "Generational Impact Modules", icon: Globe },
-    //   { name: "Generational Impact Modules", icon: Globe },
+      // { name: "Generational Impact Modules", icon: Globe },
   ];
 
   const programs = Array.from({ length: 10 }, (_, i) => ({
@@ -247,11 +247,11 @@ const Header = () => {
 
           {/* Other Links */}
           <li><Link href="/">About Us</Link></li>
-          <li><Link href="/">Mentorship</Link></li>
+          <li><Link href="/faq">Faq</Link></li>
 
           {/* Buttons */}
-          <li><Link href="/"><button className={styles.primaryBtn}>Sign In</button></Link></li>
-          <li><Link href="/"><button className={styles.secondaryBtn}>Join Now</button></Link></li>
+          <li><Link href="/signin"><button className={styles.primaryBtn}>Sign In</button></Link></li>
+          <li><Link href="/signup"><button className={styles.secondaryBtn}>Join Now</button></Link></li>
         </ul>
       </div>
     </header>
