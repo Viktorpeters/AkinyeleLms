@@ -2,11 +2,37 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./signup.module.css";
-import { Plus, ChevronDown, ChevronUp, X,Upload } from "lucide-react";
+import { Plus, ChevronDown, ChevronUp, X, Upload } from "lucide-react";
 import MultiDropdown from "../../MultiDropdown/page";
 
 export default function SignupForm() {
-  const [step, setStep] = useState(1); // track current step
+  const [step, setStep] = useState(1); 
+
+  const ministries = [
+    { ministry: "Choir / Worship Team", category: "Worship & Creative" },
+    { ministry: "Drama & Creative Arts", category: "Worship & Creative" },
+    { ministry: "Media & Technical Team", category: "Worship & Creative" },
+    {
+      ministry: "Bible Study / Teaching Ministry",
+      category: "Word & Teaching",
+    },
+    { ministry: "Counseling & Follow-up", category: "Word & Teaching" },
+    { ministry: "Youth Ministry", category: "Word & Teaching" },
+    { ministry: "Children’s Ministry", category: "Word & Teaching" },
+    { ministry: "Ushering / Protocol", category: "Welfare & Service" },
+    { ministry: "Hospitality / Welfare", category: "Welfare & Service" },
+    { ministry: "Sanctuary Keepers", category: "Welfare & Service" },
+    { ministry: "Evangelism Team", category: "Outreach & Impact" },
+    { ministry: "Prayer Team / Intercessors", category: "Outreach & Impact" },
+    {
+      ministry: "Community Outreach & Social Impact",
+      category: "Outreach & Impact",
+    },
+    {
+      ministry: "Interpreters / Language Ministry",
+      category: "Outreach & Impact",
+    },
+  ];
 
   const courses = [
     "Spiritual Formation & Kingdom Identity",
@@ -127,9 +153,9 @@ export default function SignupForm() {
 
             <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
-                Kingdom Impact Coaching Academy
+                Kingdom Impact Coaching Academy &copy; 2025
               </p>
-              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              {/* <span style={{ fontSize: "12px" }}>&copy; 2025</span> */}
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
@@ -173,9 +199,9 @@ export default function SignupForm() {
 
             <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
-                Kingdom Impact Coaching Academy
+                Kingdom Impact Coaching Academy &copy; 2025
               </p>
-              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              {/* <span style={{ fontSize: "12px" }}>&copy; 2025</span> */}
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
@@ -259,11 +285,11 @@ export default function SignupForm() {
               </button>
             </div>
 
-               <div className={styles.bottomrightfooter}>
+            <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
-                Kingdom Impact Coaching Academy
+                Kingdom Impact Coaching Academy &copy; 2025
               </p>
-              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              {/* <span style={{ fontSize: "12px" }}>&copy; 2025</span> */}
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
@@ -331,7 +357,8 @@ export default function SignupForm() {
                   accept=".pdf"
                 />
                 <label htmlFor="fileUpload" className={styles.fileLabel}>
-                   <Upload height={14} width={15} className={styles.icon} /> Upload PDF
+                  <Upload height={14} width={15} className={styles.icon} />{" "}
+                  Upload PDF
                 </label>
                 <span className={styles.fileNote}>File in PDF only</span>
               </div>
@@ -355,11 +382,11 @@ export default function SignupForm() {
               </button>
             </div>
 
-              <div className={styles.bottomrightfooter}>
+            <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
-                Kingdom Impact Coaching Academy
+                Kingdom Impact Coaching Academy &copy; 2025
               </p>
-              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              {/* <span style={{ fontSize: "12px" }}>&copy; 2025</span> */}
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
           </form>
@@ -380,7 +407,7 @@ export default function SignupForm() {
             </div>
 
             {/* Section B */}
-            <div className={styles.formGroup}>
+            {/* <div className={styles.formGroup}>
               <h3 className={styles.normalLabel}>
                 Describe your salvation experience
               </h3>
@@ -389,26 +416,26 @@ export default function SignupForm() {
                 placeholder="Tell us about your salvation experience"
                 className={styles.textarea}
               ></textarea>
-            </div>
+            </div> */}
 
             {/* Section C */}
             <div className={styles.formGroup}>
               <h3 className={styles.normalLabel}>Ministry Involvement</h3>
+
               <div className={styles.check}>
-                <div className={styles.checkboxRow}>
-                  <label>
-                    <input type="checkbox" /> Choir
-                  </label>
-                  <label>
-                    <input type="checkbox" /> Ushering
-                  </label>
-                  <label>
-                    <input type="checkbox" /> Prayer Team
-                  </label>
-                  <label>
-                    <input type="checkbox" /> Evangelism
-                  </label>
-                </div>
+                {ministries.map(({ ministry, category }, index) => (
+                  <div key={index} className={styles.checkboxRow}>
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="ministries"
+                        value={ministry}
+                      />
+                      {ministry}{" "}
+                      <span className={styles.category}>({category})</span>
+                    </label>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -426,18 +453,16 @@ export default function SignupForm() {
               </button>
             </div>
 
-               <div className={styles.bottomrightfooter}>
+            <div className={styles.bottomrightfooter}>
               <p style={{ fontSize: "13px" }}>
-                Kingdom Impact Coaching Academy
+                Kingdom Impact Coaching Academy &copy; 2025
               </p>
-              <span style={{ fontSize: "12px" }}>&copy; 2025</span>
+              {/* <span style={{ fontSize: "12px" }}>&copy; 2025</span> */}
               <h6>KLOUD6 TECHNOLOGIES</h6>
             </div>
-          </form>          
+          </form>
         )}
       </div>
-
-      
     </section>
   );
 }

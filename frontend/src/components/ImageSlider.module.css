@@ -1,0 +1,39 @@
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.swipercontainer {
+  padding: 2rem 0;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image {
+  border-radius: 1rem;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+}

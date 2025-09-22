@@ -51,6 +51,8 @@ const Header = () => {
     { name: "Special Capacity-Building Labs", icon: FlaskConical },
     { name: "Digital Influence & Media Mastery", icon: Monitor },
     { name: "Generational Impact Modules", icon: Globe },
+    //  { name: "Generational Impact Modules", icon: Globe },
+    //   { name: "Generational Impact Modules", icon: Globe },
   ];
 
   const programs = Array.from({ length: 10 }, (_, i) => ({
@@ -130,12 +132,12 @@ const Header = () => {
 
           {/* About Us */}
           <li>
-            <Link href="/">About Us</Link>
+            <Link href="#about">About Us</Link>
           </li>
 
           {/* Mentorship */}
           <li>
-            <Link href="/">Mentorship</Link>
+            <Link href="/faq">Faq</Link>
           </li>
 
           {/* Get Involved */}
@@ -166,7 +168,7 @@ const Header = () => {
         {/* <button className={styles.primaryBtn}>Sign In</button> */}
         <Button2>Sign in</Button2>
         </Link>
-        <Link href="/"><button className={styles.secondaryBtnn}>Join Now</button></Link>
+        <Link href="/signup"><button className={styles.secondaryBtnn}>Join Now</button></Link>
       </div>
 
       {/* Mobile Menu Icon */}
@@ -206,9 +208,10 @@ const Header = () => {
             </button>
             {showCoursesMobile && (
               <ul className={styles.mobileDropdown}>
-                {courses.map(({ name }, i) => (
+                {courses.map(({ name,  icon: Icon  }, i) => (
                   <li key={i}>
-                    <Link href={`/courses/${i}`} onClick={() => setMobileNavOpen(false)}>
+                       <Icon size={18} className={styles.courseIconn} />
+                    <Link href={`/Courses/${i}`} onClick={() => setMobileNavOpen(false)}>
                       {name}
                     </Link>
                   </li>

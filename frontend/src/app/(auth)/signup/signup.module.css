@@ -15,6 +15,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   animation: fadeIn 0.8s ease-in-out;
+  /* margin-bottom: 60px; */
 }
 
 .stepIndicator {
@@ -510,12 +511,15 @@
 }
 
 .bottomrightfooter {
-  /* position: absolute; */
+  /* position: fixed; */
   bottom: 0;
   /* background-color: red; */
   display: flex;
   flex-direction: column;
   gap: .1rem;
+  min-width: 400px;
+  /* width: 100%; */
+  /* background-color: red; */
 }
 
 .bottomrightfooter p,
@@ -525,10 +529,11 @@
   margin: 0 6px;          
   font-weight: normal;
   vertical-align: middle; 
+  font-size: .6rem;
 }
 
 .bottomrightfooter h6 {
-  font-size: 0.75rem;    
+  font-size: 0.6rem;    
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -618,4 +623,22 @@
   animation: fadeIn 1s ease;
 }
 
+}
+
+
+.checkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.checkboxItem input {
+  transform: scale(1.1);
 }

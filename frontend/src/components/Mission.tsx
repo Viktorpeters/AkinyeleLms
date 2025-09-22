@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./Mission.module.css";
 import { ChevronsRight } from "lucide-react";
 import Link from "next/link";
+
 const Mission = () => {
   return (
     <section className={styles.section}>
@@ -20,7 +21,7 @@ const Mission = () => {
           </p>
 
           {/* <button  className={styles.ctaBtn}>View Program  <ChevronsRight size={24} /></button> */}
-          <Link href="/Courses">
+          <Link href="/Courses/page">
             <button className={styles.ctaBtn}>
               View Program <ChevronsRight size={24} />
             </button>

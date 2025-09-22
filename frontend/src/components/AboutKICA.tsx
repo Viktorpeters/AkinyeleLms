@@ -5,9 +5,10 @@ import styles from "./AboutKICA.module.css";
 
 const AboutKICA = () => {
   return (
-    <div className={styles.page}>
+    <div id="about" className={styles.page}>
       {/* Header Section */}
       <motion.section
+        id="about"
         className={styles.hero}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

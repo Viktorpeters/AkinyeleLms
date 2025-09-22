@@ -21,7 +21,7 @@
   position: absolute;
   top: 300%;
   left: -200px;
-  width: 850px;
+  width: 900px;
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -39,16 +39,17 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin-right: 10px;
+  margin-right: -100px;
 }
 
 .courseList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* two-column grid for courses */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 0.8rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .courseList li a {
@@ -349,7 +350,6 @@
   top: 0;
   left: -100%;
   width: 100%;
-  /* max-width: 350px; */
   height: 100%;
   background: #fff;
   box-shadow: 4px 0 20px rgba(0,0,0,0.15);
@@ -461,19 +461,20 @@
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.6rem;
   margin-top: 0.5rem;
   animation: fadeIn 0.25s ease forwards;
-  background: #f9fafb;
+  background: rgba(255, 68, 0, 0.83);
   border-radius: 8px;
-  padding: 0.75rem 1rem;
+  padding: 1.7rem 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow-y: scroll;
 }
 
 /* Dropdown Links */
 .mobileDropdown li a {
   text-decoration: none;
-  color: #111827;
+  color: white;
   font-size: 0.95rem;
   font-weight: 500;
   padding: 0.5rem 0.25rem;
@@ -481,6 +482,16 @@
   transition: background 0.2s, color 0.2s;
 }
 
+.mobileDropdown li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.courseIconn {
+  color: blue;
+}
 .mobileDropdown li a:hover {
   background: #e0f2fe;
   color: #1e40af;

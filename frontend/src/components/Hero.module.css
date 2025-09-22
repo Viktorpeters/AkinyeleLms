@@ -222,4 +222,10 @@
     font-size: .8rem;
     font-weight: 200;
   }
+
+  .navBtn {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
 }

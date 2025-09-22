@@ -5,6 +5,7 @@ import gsap from "gsap";
 import styles from "./Hero.module.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "./Button";
+import Link from "next/link";
 import Image from "next/image";
 
 const slides = [
@@ -71,11 +72,10 @@ export default function HeroSlider() {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  // Animate fade in/out on slide change
+  // Animate fade in/out on slide chang
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Fade out old content instantly before updating
     tl.fromTo(
       [titleRef.current, subtitleRef.current, ctaRef.current],
       { autoAlpha: 0, y: 20 },
@@ -93,7 +93,6 @@ export default function HeroSlider() {
     };
   }, [current]);
 
-  // Auto play slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -105,7 +104,6 @@ export default function HeroSlider() {
 
   return (
     <section className={styles.hero}>
-      {/* Video background */}
       <div className={styles.videoWrapper}>
         <video
           key={slide.video}
@@ -120,7 +118,6 @@ export default function HeroSlider() {
 
       <div className={styles.overlay}></div>
 
-      {/* Content */}
       <div className={styles.content}>
         <h2 ref={titleRef} className={styles.headline}>
           {slide.title}
@@ -129,8 +126,10 @@ export default function HeroSlider() {
           {slide.subtitle}
         </p>
         <div className={styles.ctaWrapper} ref={ctaRef}>
-          <Button />
-          {/* Avatars */}
+          <Link href="/signup">
+            <Button />
+          </Link>
+
           <div className={styles.avatars}>
             {[
               "https://randomuser.me/api/portraits/women/44.jpg",
@@ -152,7 +151,6 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Controls */}
         <div className={styles.controls}>
           <button
             className={styles.navBtn}
