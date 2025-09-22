@@ -31,7 +31,8 @@ export default function RootLayout({
         {children}
         <WhatsAppChat
         // phone="+2348012345678"           
-        welcome="Hi! I’m your AI assistant 🤖 — how can I help today?"
+        welcome="Hi! I’m brethren ✝️  — I welcome you in the name of JESUS.
+        How may i help you today ?"
         ctaText="Chat on WhatsApp"
         // presetText="Hello! I’d like to speak with support."
       />
