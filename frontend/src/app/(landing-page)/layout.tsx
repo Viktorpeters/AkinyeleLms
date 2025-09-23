@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header"; 
+import WhatsAppChat from "@/components/WhatsAppChat"; // ✅ import chat button
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* <Header /> */}
         {children}
+        <WhatsAppChat
+        // phone="+2348012345678"           
+        welcome="Hi! brethren ✝️  — I welcome you in the name of our lord's JESUS CHRIST.
+        How may i help you today ?"
+        ctaText="Chat on WhatsApp"
+        // presetText="Hello! I’d like to speak with support."
+      />
       </body>
     </html>
   );
