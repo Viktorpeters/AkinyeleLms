@@ -97,8 +97,7 @@ const FAQ = () => {
   };
 
   return (
-    <div>
-      <Header />
+    <>
     <section className={styles.faqSection}>
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
@@ -145,7 +144,7 @@ const FAQ = () => {
         ))}
       </div>
     </section>
-    </div>
+    </>
   );
 };
 

@@ -370,12 +370,12 @@
 .dropdownWrapper {
   grid-column: span 2;
   position: relative;
-  width: 100%; /* force wrapper to control width */
-  display: inline-block; /* keep content tied to trigger */
+  width: 100%;
+  display: inline-block; 
 }
 
 .dropdownToggle {
-  width: 100%; /* button full width of wrapper */
+  width: 100%; 
   box-sizing: border-box;
 }
 
@@ -383,8 +383,8 @@
   position: absolute;
   top: 110%;
   left: 0;
-  right: 0;          /* ✅ keeps it same width as toggle */
-  width: 100%;       /* ✅ same width */
+  right: 0;         
+  width: 100%;     
   box-sizing: border-box;
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -533,7 +533,7 @@
   margin: 2px 0 0;
   font-size: 11px;
   font-weight: 500;
-  color: #777;              /* lighter for secondary text */
+  color: #777;             
   letter-spacing: 0.5px;
 }
 

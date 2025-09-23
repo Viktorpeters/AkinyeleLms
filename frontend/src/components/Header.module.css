@@ -30,7 +30,7 @@
   animation: fadeIn 0.25s ease forwards;
   z-index: 2000;
   display: grid;
-  grid-template-columns: 1fr 4fr; /* logo | courses list */
+  grid-template-columns: 1fr 4fr; 
   gap: 1rem;
 }
 
@@ -50,8 +50,8 @@
   padding: 0;
   margin: 0;
   grid-auto-flow: row;
+  margin-right: 170px;
 }
-
 
 
 .courseList li a {
@@ -65,6 +65,8 @@
   color: var(--foreground);
   transition: background 0.2s ease, color 0.2s ease;
 }
+
+
 
 .courseList li a:hover {
   background: #f3f4f6;
@@ -86,6 +88,14 @@
   color: var(--foreground);
   transition: color 0.2s ease;
   list-style: none;
+}
+
+.courseList li:nth-child(10) {
+  /* color: red; */
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  width: 180px;
 }
 
 .navList li a:hover {
@@ -131,7 +141,6 @@
   top: 300%;
   left: -200%;
   width: 400px; 
-  
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
@@ -192,8 +201,8 @@
 
   /* 👇 make it grid */
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 2 equal columns */
-  gap: 0.8rem; /* spacing between items */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 0.8rem; 
 }
 
 .dropdownMenu li {
@@ -224,10 +233,9 @@
   padding: 1rem;
   animation: fadeIn 0.25s ease forwards;
   z-index: 2000;
-
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .programList {
@@ -460,37 +468,41 @@
 /* Dropdown Menu */
 .mobileDropdown {
   list-style: none;
-  padding-left: 1rem;
-  display: flex;
+  /* padding-left: 1rem; */
+  /* display: flex; */
   flex-direction: column;
   gap: 1.6rem;
   margin-top: 0.5rem;
   animation: fadeIn 0.25s ease forwards;
-  background: rgba(255, 68, 0, 0.83);
+  /* background: rgba(255, 68, 0, 0.83); */
   border-radius: 8px;
   padding: 1.7rem 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.483);
   overflow-y: scroll;
 }
 
 /* Dropdown Links */
 .mobileDropdown li a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
   font-size: 0.95rem;
   font-weight: 500;
   padding: 0.5rem 0.25rem;
   border-radius: 6px;
   transition: background 0.2s, color 0.2s;
+  
 }
 
 .mobileDropdown li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  display: flex;              
+  align-items: center;       
+  gap: 0.3rem;               
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
 }
-
 .courseIconn {
   color: blue;
 }
