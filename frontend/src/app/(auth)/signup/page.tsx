@@ -129,7 +129,7 @@ export default function SignupForm() {
             <input type="tel" placeholder="Phone Number" />
             <input type="email" placeholder="Email" />
             <input type="text" placeholder="Address" />
-            <input type="tel" placeholder="Parent / Guardian Contact" />
+            <input type="tel" placeholder="Parent/Guardian Contact" />
             <input type="tel" placeholder="Emergency Contact" />
 
             {/* Buttons */}
