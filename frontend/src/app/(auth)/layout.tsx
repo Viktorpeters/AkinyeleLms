@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: 'Next.js',
@@ -19,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={poppins.variable}>
+      {/* <Header /> */}
       <body>{children}</body>
     </html>
   )
