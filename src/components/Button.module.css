@@ -1,0 +1,76 @@
+/* From Uiverse.io by adamgiebl */
+.button {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 1em 2.8em;
+  font-size: 18px;
+  /* background: transparent; */
+  background: rgb(6, 1, 165);
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: white;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.button span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  /* border: 4px solid rgb(41, 41, 163); */
+}
+
+.button span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+.button:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: white;
+  border: 2px solid rgba(255, 68, 0, 0.89);
+  color: black;
+}
+
+.button:hover {
+  color: black;
+  border-bottom: 4px solid rgb(10, 10, 237);
+  border-radius: 3px;
+}
+
+.button:active span::before {
+  background: rgba(255, 68, 0, 0.89);
+  color: white;
+}
+
+@media (max-width: 750px) {
+  .button {
+    font-size: 17px;
+    width: 200px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .button {
+    width: 150px;
+    font-size: var(--text-sm);
+  }
+}
