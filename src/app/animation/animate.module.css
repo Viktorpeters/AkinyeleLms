@@ -1,0 +1,47 @@
+.animationContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.animationContainer h3 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+
+  /* Bouncing animation */
+  animation: bounce 2s infinite;
+}
+
+/* Bounce keyframes */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+}
+
+.animationContainer :global(canvas) {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .animationContainer {
+    max-width: 90%;
+  }
+
+  .animationContainer h3 {
+    font-size: 1rem; /* smaller on mobile */
+  }
+}
+
+
