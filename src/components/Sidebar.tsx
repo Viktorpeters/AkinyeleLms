@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle, isMobile }) => {
   const [activeTab, setActiveTab] = useState("Admission Status");
 
   const menuItems = [
-    { icon: <GraduationCap size={20} />, label: "Admission Status" },
+    { icon: <GraduationCap  size={20} />, label: "Admission Status" },
   ];
 
   return (
@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle, isMobile }) => {
         </div>
 
         <button className={styles.toggleBtn} onClick={onToggle}>
-          {isOpen ? <PanelLeftClose size={22} /> : <PanelRightOpen size={22} />}
+          {isOpen ? <PanelLeftClose color="black" size={22} /> : <PanelRightOpen color="black" size={22} />}
         </button>
 
         <ul className={styles.menu}>

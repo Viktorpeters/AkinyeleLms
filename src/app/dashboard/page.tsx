@@ -7,8 +7,8 @@ const Page = () => {
     <div>
       {/* Welcome Section */}
       <div className={styles.welcomecont}>
-        <GraduationCap color="blue" size={40} />
-        <h1>Welcome back, Ososanya mubarak</h1>
+        {/* <GraduationCap color="blue" size={40} /> */}
+        {/* <h1>Welcome back, Ososanya mubarak</h1> */}
         {/* <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi
           ducimus odit eos aspernatur nisi!

@@ -23,7 +23,7 @@ const DashHeader: React.FC<DashHeaderProps> = ({ sidebarOpen, onToggle }) => {
       <div className={styles.left}>
         {/* Sidebar toggle button moved here */}
         <button className={styles.toggleBtn} onClick={onToggle}>
-          {sidebarOpen ? <PanelLeftClose size={22} /> : <PanelRightOpen size={22} />}
+          {sidebarOpen ? <PanelLeftClose color="black" size={27} /> : <PanelRightOpen color="black" size={27} />}
         </button>
 
         {/* Optional: logo/title */}

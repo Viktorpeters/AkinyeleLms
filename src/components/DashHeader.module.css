@@ -1,14 +1,15 @@
 .header {
   height: 64px;
-  background: #ffffff;
+  /* background: #ffffff; */
   border-bottom: 1px solid #e2e8f0;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* padding: 0 1.5rem; */
   position: sticky;
   top: 0;
-  z-index: 999;
+  /* z-index: 999; */
 }
 
 
@@ -57,7 +58,7 @@
   top: 50%;
   left: 8px;
   transform: translateY(-50%);
-  color: #64748b;
+  /* color: #64748b; */
 }
 
 
@@ -115,7 +116,7 @@
 
 .userEmail {
   font-size: 0.75rem;
-  color: #64748b;
+  /* color: #64748b; */
 }
 
 /* DashHeader.module.css */
@@ -123,10 +124,10 @@
 .toggleBtn {
   background: none;
   border: none;
-  color: #f8fafc;
+  /* color: #f8fafc; */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }

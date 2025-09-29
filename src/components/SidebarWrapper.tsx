@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import DashHeader from "@/components/DashHeader";
+import styles from "./Sidebar.module.css"
 
 export default function SidebarWrapper({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -19,7 +20,10 @@ export default function SidebarWrapper({ children }: { children: React.ReactNode
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-      <Sidebar isOpen={sidebarOpen} onToggle={handleToggle} isMobile={isMobile} />
+      <div className={styles.sidetoggle}>
+
+      <Sidebar  isOpen={sidebarOpen} onToggle={handleToggle} isMobile={isMobile} />
+      </div>
 
       <div
         style={{

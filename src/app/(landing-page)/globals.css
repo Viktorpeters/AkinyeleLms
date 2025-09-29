@@ -69,6 +69,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: var(--font-poppins), sans-serif;
+  /* background: #000; */
 }
 
 body {

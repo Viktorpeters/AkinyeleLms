@@ -1,12 +1,12 @@
 .sidebar {
   height: 100vh;
   background: #0f172a;
-  color: #f8fafc;
+  color: white;
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -.5rem;
   transition: width 0.3s ease, transform 0.3s ease;
   overflow: hidden;
   border-right: 1px solid #1e293b;
@@ -41,7 +41,7 @@
 .subtitle {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #94a3b8; 
+  /* color: #94a3b8;  */
   margin-top: 2px;
   text-align: center;
 }
@@ -60,14 +60,15 @@
 .welcome {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #e2e8f0;
+  /* color: #e2e8f0; */
   text-align: center;
 }
 
 .toggleBtn {
   background: none;
   border: none;
-  color: #f8fafc;
+  /* color: #f8fafc; */
+  color: black;
   margin: 0.8rem auto;
   cursor: pointer;
   display: flex;
@@ -105,6 +106,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+.sidetoggle {
+  /* color: red; */
 }
 
 .label {
@@ -155,6 +162,12 @@
   }
 }
  */
+
+
+
+ .toggleBtn {
+  display: none;
+ }
 
 /* Mobile only at 750px */
 @media (max-width: 750px) {
