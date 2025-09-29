@@ -131,3 +131,55 @@
   justify-content: center;
   margin-right: 2rem;
 }
+
+
+/* Notification dot inside bell */
+.notificationDot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: red;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Make iconBtn relative to contain the dot */
+.iconBtn {
+  position: relative; /* add this */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+
+/* User initials circle */
+.initials {
+  width: 40px;
+  height: 40px;
+  background: #2563eb; /* blue background, you can change */
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.6rem; /* space before user info */
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
