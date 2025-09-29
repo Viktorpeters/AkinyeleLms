@@ -15,9 +15,11 @@ export default function SidebarWrapper({ children }: { children: React.ReactNode
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleToggle = () => setSidebarOpen(prev => !prev);
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-      <Sidebar onToggle={setSidebarOpen} />
+      <Sidebar isOpen={sidebarOpen} onToggle={handleToggle} isMobile={isMobile} />
 
       <div
         style={{
@@ -28,7 +30,7 @@ export default function SidebarWrapper({ children }: { children: React.ReactNode
           marginLeft: isMobile ? 0 : sidebarOpen ? "220px" : "70px",
         }}
       >
-        <DashHeader />
+        <DashHeader sidebarOpen={sidebarOpen} onToggle={handleToggle} />
         <main style={{ flex: 1, padding: "20px" }}>{children}</main>
       </div>
     </div>
