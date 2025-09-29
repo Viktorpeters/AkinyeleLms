@@ -84,13 +84,15 @@ export default function OTPVerification() {
               />
             ))}
           </div>
-
+          <p>A verification code has been sent to you.</p>
           <p className="otp-resend">
             Didn't receive OTP?{" "}
             <Link className="otp-resend-link" href="/signin">
               Resend
             </Link>
           </p>
+
+          <Link href="/animation">
 
           <button
             type="button"
@@ -99,6 +101,7 @@ export default function OTPVerification() {
           >
             Proceed
           </button>
+          </Link>
         </form>
       </div>
     </div>

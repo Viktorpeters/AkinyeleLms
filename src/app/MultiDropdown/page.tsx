@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import styles from "./step.module.css";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
+import { useSignupForm } from "@/hooks/useSignupForm";
+
 
 type District = string;
 
@@ -18,79 +20,76 @@ type Centre = {
 
 const CENTRES: Centre[] = [
   {
-    "centre": "APAPA - PRAISE CENTRE",
-    "zones": [
+    centre: "APAPA - PRAISE CENTRE",
+    zones: [
       {
-        "name": "APAPA DCC",
-        "districts": [
+        name: "APAPA DCC",
+        districts: [
           "Apapa District",
           "Oke-Anu District",
           "Oke-Iye District",
           "Somorin District",
           "Abuleaka District",
-          "El-Bethel Center District"
-        ]
+          "El-Bethel Center District",
+        ],
       },
       {
-        "name": "IJANIKIN ZONE",
-        "districts": [
+        name: "IJANIKIN ZONE",
+        districts: [
           "Oluwatedo District",
           "Palace Of Glory District",
           "Oto-Awori District",
           "God's Power District",
-          "Citadel Of Praise District"
-        ]
+          "Citadel Of Praise District",
+        ],
       },
       {
-        "name": "OWODE ZONE",
-        "districts": [
-          "Ibudo Agbara District",
-          "Muwo District"
-        ]
+        name: "OWODE ZONE",
+        districts: ["Ibudo Agbara District", "Muwo District"],
       },
       {
-        "name": "OLUTI ZONE",
-        "districts": [
+        name: "OLUTI ZONE",
+        districts: [
           "Onireke District",
           "Salem District",
-          "Mount Of Joy District"
-        ]
+          "Mount Of Joy District",
+        ],
       },
       {
-        "name": "MILE 2 ZONE",
-        "districts": [
+        name: "MILE 2 ZONE",
+        districts: [
           "Oke-Igbala District",
           "Mount Of Glorification District",
           "Oke-Irapada District",
           "Oke-Itura District",
-          "Emmanuel District"
-        ]
+          "Emmanuel District",
+        ],
       },
       {
-        "name": "TIWADIRE ZONE",
-        "districts": [
+        name: "TIWADIRE ZONE",
+        districts: [
           "Araromi District",
           "Oke-Ayo District",
-          "Oke-Ibukun District"
-        ]
-      }
-    ]
+          "Oke-Ibukun District",
+        ],
+      },
+    ],
   },
-  // second center 
+  // second center
   {
-    "centre": "YABA - WISDOM CENTRE",
-    "zones": [
+    centre: "YABA - WISDOM CENTRE",
+    zones: [
       {
-        "name": "YABA DCC",
-        "districts": [
+        name: "YABA DCC",
+        districts: [
           "Yaba District",
           "Akoka District",
-          "Anointed Blessed District"
-        ]
+          "Anointed Blessed District",
+        ],
       },
       {
-        "name": "EBUTE METTA DCC",
-        "districts": [
+        name: "EBUTE METTA DCC",
+        districts: [
           "Ebute Metta District",
           "Adekitan District",
           "Center Of Glory District",
@@ -98,12 +97,12 @@ const CENTRES: Centre[] = [
           "Sure Foundation District",
           "Overcomers District",
           "Unity District",
-          "Peace District"
-        ]
+          "Peace District",
+        ],
       },
       {
-        "name": "VINEYARD OF MERCY DCC",
-        "districts": [
+        name: "VINEYARD OF MERCY DCC",
+        districts: [
           "Vineyard Of Mercy District",
           "Ajegunle District",
           "Oke-Iye District",
@@ -112,58 +111,57 @@ const CENTRES: Centre[] = [
           "Redemption District",
           "Abesan District",
           "City Of Peace District",
-          "Deliverance District"
-        ]
+          "Deliverance District",
+        ],
       },
       {
-        "name": "REDEMPTION ZONE",
-        "districts": [
+        name: "REDEMPTION ZONE",
+        districts: [
           "Chapel Of Comfort District",
           "Redemption District",
           "Iwaya District",
           "Egan District",
-          "Morofunlo District"
-        ]
+          "Morofunlo District",
+        ],
       },
       {
-        "name": "ABULE NLA ZONE",
-        "districts": [
+        name: "ABULE NLA ZONE",
+        districts: [
           "Abule Nla District",
           "Bariga District",
-          "Ojo Oniyun District"
-        ]
+          "Ojo Oniyun District",
+        ],
       },
       {
-        "name": "OYINGBO ZONE",
-        "districts": [
+        name: "OYINGBO ZONE",
+        districts: [
           "Botanical Garden District",
           "Ile-Ayo District",
           "Makoko District",
-          "Ikoga District"
-        ]
-      }
-    ]
-  }
+          "Ikoga District",
+        ],
+      },
+    ],
+  },
   // third center
-  ,
   {
-    "centre": "KOSOFE - BREAKTHROUGH CENTRE",
-    "zones": [
+    centre: "KOSOFE - BREAKTHROUGH CENTRE",
+    zones: [
       {
-        "name": "KOSOFE DCC",
-        "districts": [
+        name: "KOSOFE DCC",
+        districts: [
           "Ojota District",
           "Mende District",
           "God's Miracles District",
           "Victory In Christ District",
           "Mowe District",
           "Ibafo District",
-          "Anthony District"
-        ]
+          "Anthony District",
+        ],
       },
       {
-        "name": "KETU DCC",
-        "districts": [
+        name: "KETU DCC",
+        districts: [
           "Ketu District",
           "Ebenezer District, Ibafo",
           "Salvation District, Ogijo",
@@ -171,84 +169,83 @@ const CENTRES: Centre[] = [
           "Egbeda District",
           "God’s Grace District, Magboro",
           "Mercyland District Alapere",
-          "Life Of Peace District, Magodo"
-        ]
+          "Life Of Peace District, Magodo",
+        ],
       },
       {
-        "name": "ALAPERE DCC",
-        "districts": [
+        name: "ALAPERE DCC",
+        districts: [
           "Oke Igbala District",
           "Deliverance District",
           "Ogo Oluwa District",
           "Ore-Ofe District",
-          "Miracle District"
-        ]
+          "Miracle District",
+        ],
       },
       {
-        "name": "MOWE ZONE",
-        "districts": [
+        name: "MOWE ZONE",
+        districts: [
           "Mowe District",
           "Loburo District",
           "Daleko District",
           "Adesan District",
           "Land Of Praise District",
-          "Gbegira District"
-        ]
+          "Gbegira District",
+        ],
       },
       {
-        "name": "OJODU ABIODUN ZONE",
-        "districts": [
+        name: "OJODU ABIODUN ZONE",
+        districts: [
           "Ojodu Abiodun",
           "Fountain Of Life, Mowe",
           "Fountain Of Life, Magboro",
           "Solution District, Alagbole",
-          "Ibudo Olorun Emi Ni District, Ibafo"
-        ]
+          "Ibudo Olorun Emi Ni District, Ibafo",
+        ],
       },
       {
-        "name": "MERCYLAND UNITY ZONE, AKUTE",
-        "districts": [
+        name: "MERCYLAND UNITY ZONE, AKUTE",
+        districts: [
           "Mercyland District",
           "Olanbe District",
-          "Matogun District"
-        ]
+          "Matogun District",
+        ],
       },
       {
-        "name": "CHRIST FAMILY ZONE",
-        "districts": [
+        name: "CHRIST FAMILY ZONE",
+        districts: [
           "Ikosi District",
           "Ojudu District",
-          "Fountain Of Mercy District"
-        ]
+          "Fountain Of Mercy District",
+        ],
       },
       {
-        "name": "OGO-OLUWA NTAN ZONE",
-        "districts": [
+        name: "OGO-OLUWA NTAN ZONE",
+        districts: [
           "Ogo-Oluwa District",
           "Glory To Glory District",
-          "City Of God District"
-        ]
+          "City Of God District",
+        ],
       },
       {
-        "name": "SOLID ROCK ZONE",
-        "districts": [
+        name: "SOLID ROCK ZONE",
+        districts: [
           "Ori Okuta District",
           "Maya District",
-          "Palace Of Peace District"
-        ]
-      }
-    ]
-  }
+          "Palace Of Peace District",
+        ],
+      },
+    ],
+  },
 
   //  fourth center
 
-  ,
   {
-    "centre": "SOMOLU - SOLUTION CENTER",
-    "zones": [
+    centre: "SOMOLU - SOLUTION CENTER",
+    zones: [
       {
-        "name": "SOMOLU DCC",
-        "districts": [
+        name: "SOMOLU DCC",
+        districts: [
           "Apata District",
           "Yakoyo District",
           "Blessed District",
@@ -264,98 +261,89 @@ const CENTRES: Centre[] = [
           "Ogo-Oluwatobi District",
           "Oke Itunu District",
           "Help From Above District",
-          "Itedo Anu District"
-        ]
+          "Itedo Anu District",
+        ],
       },
       {
-        "name": "BARIGA ZONE",
-        "districts": [
+        name: "BARIGA ZONE",
+        districts: [
           "Bariga District",
           "Olanrewaju District",
           "Oke Agbara Ikeyin Aye District",
           "Araromi District",
           "Deliverance District",
           "Triumphant District",
-          "Agbala Ayo District"
-        ]
+          "Agbala Ayo District",
+        ],
       },
       {
-        "name": "TEMIDIRE ONAJIMI DCC",
-        "districts": [
+        name: "TEMIDIRE ONAJIMI DCC",
+        districts: [
           "Temidire District",
           "Mowe 1 District",
           "Leadway District",
           "Promise Of God District",
           "Igbe District",
-          "Rock Of Ages District"
-        ]
+          "Rock Of Ages District",
+        ],
       },
       {
-        "name": "SOMOLU OLALEYE DCC",
-        "districts": [
+        name: "SOMOLU OLALEYE DCC",
+        districts: [
           "Somolu Olaleye District Somolu",
           "Mount Of Miracle District Agiliti",
           "Ile-Ayo District Ejigbo",
           "Oke-Iyanu District Jakande",
-          "Oke-Iyanu District Abesan Ipaja"
-        ]
-      }
-    ]
-  }
-  ,
-
+          "Oke-Iyanu District Abesan Ipaja",
+        ],
+      },
+    ],
+  },
   // fifth center
   {
-    "centre": "AJEROMI - MERCY CENTRE",
-    "zones": [
+    centre: "AJEROMI - MERCY CENTRE",
+    zones: [
       {
-        "name": "AJEROMI DCC",
-        "districts": [
+        name: "AJEROMI DCC",
+        districts: [
           "Mba District",
           "Dillion District",
           "Olayinka District",
           "Comfort District",
           "Ishasi District",
           "Citadel District",
-          "Coast Of Solution District"
-        ]
+          "Coast Of Solution District",
+        ],
       },
       {
-        "name": "AMUKOKO ZONE",
-        "districts": [
+        name: "AMUKOKO ZONE",
+        districts: [
           "Amukoko District",
           "Renewal District",
           "Kemberi District",
           "Glorious District",
           "Oke-Anu District",
-          "Success District"
-        ]
+          "Success District",
+        ],
       },
       {
-        "name": "OLODI ZONE",
-        "districts": [
-          "Olodi District",
-          "Ayetoro District",
-          "Oke-Ayo District"
-        ]
+        name: "OLODI ZONE",
+        districts: ["Olodi District", "Ayetoro District", "Oke-Ayo District"],
       },
       {
-        "name": "ALABA ORO ZONE",
-        "districts": [
-          "Alabukun District"
-        ]
-      }
-    ]
-  }
-  
+        name: "ALABA ORO ZONE",
+        districts: ["Alabukun District"],
+      },
+    ],
+  },
+
   // sixth center
-  ,
   {
-    "centre": "LAGOS - DOMINION CENTRE",
-    "zones": [
+    centre: "LAGOS - DOMINION CENTRE",
+    zones: [
       {
-        "name": "LAGOS DCC",
-        "districts": [
+        name: "LAGOS DCC",
+        districts: [
           "Lagos Island",
           "Ilupeju District",
           "Fountain Of All Goodness District",
@@ -370,72 +358,59 @@ const CENTRES: Centre[] = [
           "Christ Beloved District",
           "Testimony District",
           "Obalende District",
-          "End Time District"
-        ]
+          "End Time District",
+        ],
       },
       {
-        "name": "AJAH ZONE",
-        "districts": [
+        name: "AJAH ZONE",
+        districts: [
           "Ajah District",
           "Ilasan District",
           "Mount Of Joy District",
           "Manna District",
           "Igbo-Efon District",
-          "Voice Of God District"
-        ]
+          "Voice Of God District",
+        ],
       },
       {
-        "name": "OSAPA ZONE",
-        "districts": [
+        name: "OSAPA ZONE",
+        districts: [
           "Ayeteju District",
           "Oke-Ira District",
           "Osapa District",
-          "Isoji District"
-        ]
+          "Isoji District",
+        ],
       },
       {
-        "name": "OLUSHI DCC",
-        "districts": [
-          "Olushi District",
-          "Tinubu District",
-          "Mayegun"
-        ]
+        name: "OLUSHI DCC",
+        districts: ["Olushi District", "Tinubu District", "Mayegun"],
       },
       {
-        "name": "KETU 1 ZONE",
-        "districts": [
+        name: "KETU 1 ZONE",
+        districts: [
           "Ketu 1 District",
           "Ogijo District",
           "Isheri Olofin District",
-          "Kings Chapel Distict"
-        ]
+          "Kings Chapel Distict",
+        ],
       },
       {
-        "name": "LIGHT OF THE WORLD ZONE",
-        "districts": [
-          "Egbe District",
-          "Solution District",
-          "Sobande District"
-        ]
+        name: "LIGHT OF THE WORLD ZONE",
+        districts: ["Egbe District", "Solution District", "Sobande District"],
       },
       {
-        "name": "EPE ZONE",
-        "districts": [
-          "Epe District",
-          "Oke Alafia District"
-        ]
-      }
-    ]
-  }
-  ,
-
+        name: "EPE ZONE",
+        districts: ["Epe District", "Oke Alafia District"],
+      },
+    ],
+  },
   // seventh center
   {
-    "centre": "POWER CENTER",
-    "zones": [
+    centre: "POWER CENTER",
+    zones: [
       {
-        "name": "IKORODU DCC",
-        "districts": [
+        name: "IKORODU DCC",
+        districts: [
           "Ikorodu District",
           "Oke-Itura District",
           "Bagidan District",
@@ -446,72 +421,71 @@ const CENTRES: Centre[] = [
           "CAC Amen & Amen District",
           "Ajagunsegun District",
           "Green Pasture District",
-          "Power House Of Prayer (P H P) District"
-        ]
+          "Power House Of Prayer (P H P) District",
+        ],
       },
       {
-        "name": "RESTORATION ZONE",
-        "districts": [
+        name: "RESTORATION ZONE",
+        districts: [
           "Restoration District",
           "Royal District",
-          "Vineyard District"
-        ]
+          "Vineyard District",
+        ],
       },
       {
-        "name": "AMAZING GRACE ZONE",
-        "districts": []
+        name: "AMAZING GRACE ZONE",
+        districts: [],
       },
       {
-        "name": "OGIJO ZONE",
-        "districts": [
+        name: "OGIJO ZONE",
+        districts: [
           "Ogijo District",
           "Temidire District",
           "Oke-Ayo District",
-          "Faith & Victory District"
-        ]
+          "Faith & Victory District",
+        ],
       },
       {
-        "name": "LIFE AND POWER ZONE",
-        "districts": [
+        name: "LIFE AND POWER ZONE",
+        districts: [
           "Life And Power District",
           "Pentecostal District",
-          "Divine Fountain"
-        ]
+          "Divine Fountain",
+        ],
       },
       {
-        "name": "WONDER LAND ZONE",
-        "districts": [
+        name: "WONDER LAND ZONE",
+        districts: [
           "Wonder Land District",
           "Comfort District",
-          "Jesu Gbami District"
-        ]
+          "Jesu Gbami District",
+        ],
       },
       {
-        "name": "OWUTU ZONE",
-        "districts": [
+        name: "OWUTU ZONE",
+        districts: [
           "Owutu District",
           "Imagbon District",
-          "Igbo-Olomu District"
-        ]
+          "Igbo-Olomu District",
+        ],
       },
       {
-        "name": "GLORY OF GOD ZONE",
-        "districts": [
+        name: "GLORY OF GOD ZONE",
+        districts: [
           "Glory Of God District",
           "Amazing Grace District",
-          "Ore-Ofe District"
-        ]
-      }
-    ]
-  }
+          "Ore-Ofe District",
+        ],
+      },
+    ],
+  },
   // eigth center
-  ,
   {
-    "centre": "ITIRE CENTER - FUFILMENT CENTER",
-    "zones": [
+    centre: "ITIRE CENTER - FUFILMENT CENTER",
+    zones: [
       {
-        "name": "ITIRE DCC",
-        "districts": [
+        name: "ITIRE DCC",
+        districts: [
           "Itire District",
           "Atamatase District",
           "English Assembly District",
@@ -519,65 +493,64 @@ const CENTRES: Centre[] = [
           "Ikate District",
           "Oke Anu Oke Odo District",
           "City Of Testimony",
-          "Idimu District"
-        ]
+          "Idimu District",
+        ],
       },
       {
-        "name": "MOUNTAIN OF LIGHT ZONE",
-        "districts": [
+        name: "MOUNTAIN OF LIGHT ZONE",
+        districts: [
           "Mountain Of Light District",
           "Full Victory District",
           "Oke-Itura District",
-          "Oke-Imole District"
-        ]
+          "Oke-Imole District",
+        ],
       },
       {
-        "name": "ANOINTING ZONE",
-        "districts": [
+        name: "ANOINTING ZONE",
+        districts: [
           "Christ Anointing District",
           "Divine Light District",
-          "Sogunje District"
-        ]
+          "Sogunje District",
+        ],
       },
       {
-        "name": "OKE-IYE ZONE",
-        "districts": [
+        name: "OKE-IYE ZONE",
+        districts: [
           "Oke Iye District",
           "Ago Iwosan District",
           "Igbesa District",
           "Egan District",
-          "Ogijo District"
-        ]
+          "Ogijo District",
+        ],
       },
       {
-        "name": "SURULERE ZONE",
-        "districts": [
+        name: "SURULERE ZONE",
+        districts: [
           "Surulere District",
           "Ajuwon District",
-          "Powerhouse Of God District"
-        ]
+          "Powerhouse Of God District",
+        ],
       },
       {
-        "name": "GRACE TABERNACLE DCC",
-        "districts": [
+        name: "GRACE TABERNACLE DCC",
+        districts: [
           "Ijesha District",
           "Ipaja District",
           "Ejigbo District",
           "Egbe District",
           "City Of God District",
-          "Agbado District"
-        ]
-      }
-    ]
-  }
-  ,
+          "Agbado District",
+        ],
+      },
+    ],
+  },
   // ninth center
   {
-    "centre": "VICTORY CENTRE",
-    "zones": [
+    centre: "VICTORY CENTRE",
+    zones: [
       {
-        "name": "IGBOGBO DCC",
-        "districts": [
+        name: "IGBOGBO DCC",
+        districts: [
           "Igbogbo District",
           "Bayeku District",
           "Oke Itunu District",
@@ -587,96 +560,110 @@ const CENTRES: Centre[] = [
           "City Of Mercy District",
           "Oke Alafia District",
           "Life District",
-          "Lucky Fiber District"
-        ]
+          "Lucky Fiber District",
+        ],
       },
       {
-        "name": "AYEGBAMI DCC",
-        "districts": [
+        name: "AYEGBAMI DCC",
+        districts: [
           "Ayegbami District",
           "Victory District",
           "Miracles District",
           "House Of Peace District",
-          "House Of Blessing District"
-        ]
+          "House Of Blessing District",
+        ],
       },
       {
-        "name": "PEACE REIGNETH ZONE",
-        "districts": [
+        name: "PEACE REIGNETH ZONE",
+        districts: [
           "Peace District",
           "Hand Of God District",
-          "Voice Of God District"
-        ]
+          "Voice Of God District",
+        ],
       },
       {
-        "name": "LIGHT OF THE WORLD ZONE",
-        "districts": [
+        name: "LIGHT OF THE WORLD ZONE",
+        districts: [
           "Owode District",
           "Royal Priesthood",
           "Oke Isegun District",
-          "Palace Of Christ District"
-        ]
+          "Palace Of Christ District",
+        ],
       },
       {
-        "name": "WONDERCITY ZONE",
-        "districts": [
+        name: "WONDERCITY ZONE",
+        districts: [
           "Wonderland District",
           "Isawo District",
           "Salvation Army District",
-          "Royal Scepter District"
-        ]
+          "Royal Scepter District",
+        ],
       },
       {
-        "name": "MERCY OF GOD ZONE, IJEDE",
-        "districts": [
+        name: "MERCY OF GOD ZONE, IJEDE",
+        districts: [
           "Mercy Of God District",
           "River Of Life District",
-          "Liberation District"
-        ]
+          "Liberation District",
+        ],
       },
       {
-        "name": "ALMIGHTY GOD ZONE",
-        "districts": [
+        name: "ALMIGHTY GOD ZONE",
+        districts: [
           "Almighty God District",
           "Ebute Iyanu District",
           "Ona Iyanu District",
-          "Ogba Iyanu District"
-        ]
+          "Ogba Iyanu District",
+        ],
       },
       {
-        "name": "EL-SHADDI DCC",
-        "districts": [
+        name: "EL-SHADDI DCC",
+        districts: [
           "Rock Of Salvation District",
           "Joy District",
           "Palace Of Blessings District",
           "Miracle Center District",
-          "El-Shaddi District"
-        ]
-      }
-    ]
-  }
-  
-]
+          "El-Shaddi District",
+        ],
+      },
+    ],
+  },
+];
 
 const MultiDropdown: React.FC = () => {
+const { formData, updateSelections } = useSignupForm();
+
   const [selectedCentre, setSelectedCentre] = useState("");
   const [selectedZone, setSelectedZone] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
-
-  const [openCentres, setOpenCentres] = useState<Set<string>>(new Set());
-  const [openZones, setOpenZones] = useState<Set<string>>(new Set());
   const [showDropdown, setShowDropdown] = useState(false);
+  const [openCentres, setOpenCentres] = useState(new Set<string>());
+  const [openZones, setOpenZones] = useState(new Set<string>());
 
-  const toggleCentre = (centreName: string) => {
-    const newSet = new Set(openCentres);
-    newSet.has(centreName) ? newSet.delete(centreName) : newSet.add(centreName);
-    setOpenCentres(newSet);
+  // helper to update hook formData whenever selections change
+  const updateFormSelections = (centre?: string, zone?: string, district?: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      centre: centre ?? selectedCentre,
+      zone: zone ?? selectedZone,
+      district: district ?? selectedDistrict,
+    }));
   };
 
-  const toggleZone = (zoneName: string) => {
-    const newSet = new Set(openZones);
-    newSet.has(zoneName) ? newSet.delete(zoneName) : newSet.add(zoneName);
-    setOpenZones(newSet);
+  const toggleCentre = (centre: string) => {
+    setOpenCentres((prev) => {
+      const newSet = new Set(prev);
+      newSet.has(centre) ? newSet.delete(centre) : newSet.add(centre);
+      return newSet;
+    });
+  };
+
+  const toggleZone = (zone: string) => {
+    setOpenZones((prev) => {
+      const newSet = new Set(prev);
+      newSet.has(zone) ? newSet.delete(zone) : newSet.add(zone);
+      return newSet;
+    });
   };
 
   return (
@@ -691,7 +678,8 @@ const MultiDropdown: React.FC = () => {
               className={styles.cancelIcon}
               onClick={() => {
                 setSelectedCentre("");
-                setShowDropdown(true); // reopen dropdown for reselection
+                updateFormSelections("");
+                setShowDropdown(true);
               }}
             />
           </div>
@@ -704,7 +692,8 @@ const MultiDropdown: React.FC = () => {
               className={styles.cancelIcon}
               onClick={() => {
                 setSelectedZone("");
-                setShowDropdown(true); // reopen dropdown for reselection
+                updateFormSelections(undefined, "");
+                setShowDropdown(true);
               }}
             />
           </div>
@@ -717,7 +706,8 @@ const MultiDropdown: React.FC = () => {
               className={styles.cancelIcon}
               onClick={() => {
                 setSelectedDistrict("");
-                setShowDropdown(true); // reopen dropdown for reselection
+                updateFormSelections(undefined, undefined, "");
+                setShowDropdown(true);
               }}
             />
           </div>
@@ -744,6 +734,7 @@ const MultiDropdown: React.FC = () => {
                       setSelectedCentre(centre.centre);
                       setSelectedZone("");
                       setSelectedDistrict("");
+                      updateFormSelections(centre.centre, "", "");
                     }}
                   >
                     {centre.centre}
@@ -767,6 +758,7 @@ const MultiDropdown: React.FC = () => {
                             onClick={() => {
                               setSelectedZone(zone.name);
                               setSelectedDistrict("");
+                              updateFormSelections(undefined, zone.name, "");
                             }}
                           >
                             {zone.name}
@@ -787,7 +779,10 @@ const MultiDropdown: React.FC = () => {
                               <li
                                 key={district}
                                 className={styles.districtItem}
-                                onClick={() => setSelectedDistrict(district)}
+                                onClick={() => {
+                                  setSelectedDistrict(district);
+                                  updateFormSelections(undefined, undefined, district);
+                                }}
                               >
                                 {district}
                               </li>

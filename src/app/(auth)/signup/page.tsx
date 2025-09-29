@@ -198,7 +198,7 @@ export default function SignupForm() {
               >
                 Back
               </button> */}
-              {/* <Link href="/OTP"> */}
+              <Link href="/OTP">
                 <button
                   type="submit"
                   className={styles.nextBtn}
@@ -207,7 +207,7 @@ export default function SignupForm() {
                 >
                   Complete your Profile
                 </button>
-              {/* </Link> */}
+              </Link>
             </div>
 
             <div className={styles.bottomrightfooter}>

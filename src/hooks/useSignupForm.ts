@@ -19,10 +19,38 @@ export function useSignupForm(initialData: Record<string, any> = {}) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("FormData", formData);
 
-    
+    const selections = [
+      formData.centre,
+      formData.zone,
+      formData.district,
+    ].filter(Boolean);
+
+    console.log("FormData:", formData);
+    console.log("Selections Array:", selections);
   };
 
-  return { formData, handleChange, handleSubmit };
+
+  const updateSelections = (
+    centre?: string,
+    zone?: string,
+    district?: string
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      centre: centre ?? prev.centre,
+      zone: zone ?? prev.zone,
+      district: district ?? prev.district,
+    }));
+  };
+
+  return {
+    formData,
+    setFormData,
+    handleChange,
+    handleSubmit,
+    updateSelections, 
+    loading,
+    error,
+  };
 }
