@@ -2,6 +2,7 @@
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import styles from "./animate.module.css";
+import Link from "next/link";
 
 const Animation = () => {
   return (
@@ -12,6 +13,12 @@ const Animation = () => {
         autoplay
       />
       <h3>You have signed up successfully</h3>
+      <Link href="./dashboard">
+
+      <button>
+        Proceed to dashboard
+      </button>
+      </Link>
     </div>
   );
 };
