@@ -14,10 +14,10 @@ const DashHeader: React.FC<DashHeaderProps> = ({ sidebarOpen, onToggle }) => {
   const user = {
     name: "Mubarak Ososanya",
     email: "mubarak.kica@gmail.com",
-    avatar: "", // keep empty to show initials
+    avatar: "", 
   };
 
-  // Get initials
+  
   const getInitials = (name: string) => {
     const names = name.split(" ");
     const first = names[0]?.charAt(0).toUpperCase() || "";
@@ -28,22 +28,21 @@ const DashHeader: React.FC<DashHeaderProps> = ({ sidebarOpen, onToggle }) => {
   return (
     <header className={styles.header}>
       <div className={styles.left}>
-        {/* Sidebar toggle button */}
+       
         <button className={styles.toggleBtn} onClick={onToggle}>
           {sidebarOpen ? <PanelLeftClose color="black" size={27} /> : <PanelRightOpen color="black" size={27} />}
         </button>
       </div>
 
       <div className={styles.right}>
-        {/* Bell with notification */}
+        
         <button className={styles.iconBtn}>
           <Bell size={20} />
           <span className={styles.notificationDot}>1</span>
         </button>
 
-        {/* User info */}
         <div className={styles.user}>
-          {/* Avatar / initials */}
+        
           {user.avatar ? (
             <Image src={user.avatar} alt={user.name} width={40} height={40} className={styles.avatar} />
           ) : (
