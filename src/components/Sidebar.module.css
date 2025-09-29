@@ -1,0 +1,115 @@
+.sidebar {
+  height: 100vh;
+  background: #0f172a; 
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  border-right: 1px solid #1e293b;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.open {
+  width: 240px;
+}
+
+.closed {
+  width: 80px;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logoWrapper {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  border-radius: 8px;
+}
+
+.welcome {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  color: #f8fafc;
+  margin: 0.8rem auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  flex-grow: 1;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menuItem:hover {
+  background: #1e293b;
+}
+
+.active {
+  background: #2563eb; 
+  color: #fff;
+  font-weight: 600;
+}
+
+.icon {
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.logout {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-weight: 500;
+  padding: 0.8rem 1rem;
+  margin-top: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.logout:hover {
+  background: #1e293b;
+}
