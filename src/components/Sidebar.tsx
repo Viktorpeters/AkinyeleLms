@@ -49,18 +49,23 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
         }`}
       >
         
-        <div className={styles.header}>
-          <div className={styles.logoWrapper}>
-            <Image
-              src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg"
-              alt="KICA Logo"
-              width={40}
-              height={40}
-              className={styles.logo}
-            />
-          </div>
-          {isOpen && <h2 className={styles.welcome}>KICA</h2>}
-        </div>
+      <div className={styles.header}>
+  <div className={styles.logoWrapper}>
+    <Image
+      src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg"
+      alt="KICA Logo"
+      width={40}
+      height={40}
+      className={styles.logo}
+    />
+  </div>
+  {isOpen && (
+    <div className={styles.titleWrapper}>
+      <h2 className={styles.welcome}>KICA</h2>
+      <span className={styles.subtitle}>Empowering lives</span>
+    </div>
+  )}
+</div>
 
         
         <button className={styles.toggleBtn} onClick={handleToggle}>

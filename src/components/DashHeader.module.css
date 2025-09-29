@@ -117,3 +117,16 @@
   font-size: 0.75rem;
   color: #64748b;
 }
+
+/* DashHeader.module.css */
+
+.toggleBtn {
+  background: none;
+  border: none;
+  color: #f8fafc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}

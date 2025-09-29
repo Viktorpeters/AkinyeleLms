@@ -32,6 +32,21 @@
   border-bottom: 1px solid #1e293b;
 }
 
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #94a3b8; 
+  margin-top: 2px;
+  text-align: center;
+}
+
+
 .logoWrapper {
   width: 50px;
   height: 50px;
