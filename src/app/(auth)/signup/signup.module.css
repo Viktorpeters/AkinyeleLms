@@ -168,7 +168,7 @@
 .form input[type="email"],
 .form input[type="text"]:nth-of-type(2), 
 .form input[type="tel"]:nth-of-type(2)  {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 

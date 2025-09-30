@@ -135,8 +135,16 @@ export default function SignupForm() {
               name="fullName"
               value={formData.fullName || ""}
               onChange={handleChange}
-              placeholder="Full Name"
+              placeholder="First Name"
             />
+             <input
+              type="text"
+              name="fullName"
+              value={formData.fullName || ""}
+              onChange={handleChange}
+              placeholder="Last Name"
+            />
+            
             <select
               name="gender"
               value={formData.gender || ""}
@@ -161,18 +169,19 @@ export default function SignupForm() {
               placeholder="Phone Number"
             />
             <input
-              type="email"
-              name="email"
-              value={formData.email || ""}
-              onChange={handleChange}
-              placeholder="Email"
-            />
-            <input
               type="text"
               name="address"
               value={formData.address || ""}
               onChange={handleChange}
               placeholder="Address"
+            />
+            
+             <input
+              type="email"
+              name="email"
+              value={formData.email || ""}
+              onChange={handleChange}
+              placeholder="Email"
             />
             <div className={styles.formGroup}>
               <label>Statement of Purpose</label>
