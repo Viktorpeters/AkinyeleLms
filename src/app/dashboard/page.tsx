@@ -17,7 +17,6 @@ const Page = () => {
 
       {/* Application Status Section */}
       <div className={styles.statusContainer}>
-       
         <div className={styles.statusCard}>
           <div className={styles.statusHeader}>
             <Clock size={28} />
@@ -25,8 +24,18 @@ const Page = () => {
           </div>
           <h2>Almost There!</h2>
           <p>
-            Thank you for registering with Akinyele LMS. Your application is
-            currently under review by our admissions team.
+            Thank you for registering with{" "}
+            <b
+              style={{
+                background: "linear-gradient(90deg, #2563eb, #3b82f6)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontWeight: "bold",
+              }}
+            >
+              KINGDOM IMPACT AND COACHING ADADEMY (KICA)
+            </b>
+            . Your application is currently under review by our admissions team.
           </p>
 
           <div className={styles.steps}>
@@ -50,9 +59,18 @@ const Page = () => {
           <div className={styles.nextcont}>
             <h5>what happens next ?</h5>
             <ul>
-              <li>Our admission team would review your application and statement of purpose.</li>
-              <li>You would recieve an email notification once your registration is approved.</li>
-              <li>Acess to your personalized learning dashboard would be granted immediately..</li>
+              <li>
+                Our admission team would review your application and statement
+                of purpose.
+              </li>
+              <li>
+                You would recieve an email notification once your registration
+                is approved.
+              </li>
+              <li>
+                Acess to your personalized learning dashboard would be granted
+                immediately..
+              </li>
             </ul>
           </div>
         </div>
@@ -66,12 +84,9 @@ const Page = () => {
               If you have questions about your application status or need
               assistance, our support team is here to help.
             </p>
-            <a href="mailto:support@akinyelelms.edu">
-              support@akinyelelms.edu
-            </a>
+            <a href="mailto:support@akinyelelms.edu">support@akinyelelms.edu</a>
             <div>
-
-            <button>Contact Support</button>
+              <button>Contact Support</button>
             </div>
           </div>
 
@@ -79,8 +94,8 @@ const Page = () => {
             <h3>Application Timeline</h3>
             <ul>
               <li>
-                <span className={styles.dotGreen}></span> Application Submitted –
-                Today
+                <span className={styles.dotGreen}></span> Application Submitted
+                – Today
               </li>
               <li>
                 <span className={styles.dotOrange}></span> Under Review – 2-5

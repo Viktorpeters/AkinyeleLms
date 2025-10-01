@@ -156,7 +156,6 @@
 }
 
 
-
 .formm input:focus,
 .formm select:focus,
 .formm textarea:focus {
@@ -171,6 +170,9 @@
   grid-column: span 1;
 }
 
+.form input[type="email"] {
+  grid-column: span 2;
+}
 
 .form input,
 .form select,

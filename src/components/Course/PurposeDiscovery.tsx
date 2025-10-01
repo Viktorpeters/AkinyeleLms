@@ -19,89 +19,70 @@ const PurposePage = () => {
         </p>
       </section>
 
-      {/* Stats Section */}
-      {/* <section className={styles.stats}>
-        <h2>Why Join This Program?</h2>
-        <div className={styles.statsGrid}>
-          <div className={styles.statsItem}>
-            <div className={styles.number}>500+</div>
-            <div className={styles.text}>Learners Enrolled</div>
-          </div>
-          <div className={styles.statsItem}>
-            <div className={styles.number}>95%</div>
-            <div className={styles.text}>Completion Rate</div>
-          </div>
-          <div className={styles.statsItem}>
-            <div className={styles.number}>4.9/5</div>
-            <div className={styles.text}>Average Rating</div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Learning Sections */}
       <section className={styles.grid}>
         <div className={`${styles.card}`} style={{ borderTopColor: "#4f46e5" }}>
-          <h3>Discover Your Purpose</h3>
+          <h3>Purpose Discovery</h3>
           <p>
-            Explore your passions, strengths, and values to uncover the driving
-            force behind your life.
+            Step into clarity by understanding God’s plan for your life, breaking
+            old mindsets, and discovering your true mandate.
           </p>
           <ul>
             <li>
               <span className={styles.bullet} style={{ background: "#4f46e5" }} />
-              Passion Mapping
+              Discovering Your Life Assignment and Unique Mandate
             </li>
             <li>
               <span className={styles.bullet} style={{ background: "#4f46e5" }} />
-              Strength Finder
+              Blueprint for Discovering Divine Assignment
             </li>
             <li>
               <span className={styles.bullet} style={{ background: "#4f46e5" }} />
-              Value Alignment
+              Breaking the Identity Crisis and Insecurity
+            </li>
+            <li>
+              <span className={styles.bullet} style={{ background: "#4f46e5" }} />
+              Breaking Limiting Beliefs
             </li>
           </ul>
         </div>
 
         <div className={`${styles.card}`} style={{ borderTopColor: "#9333ea" }}>
-          <h3>Life Mastery Tools</h3>
+          <h3>Destiny Navigation</h3>
           <p>
-            Gain practical skills and frameworks to make better decisions and
-            live intentionally.
+            Gain wisdom for navigating divine timing, vision, and the seasons of
+            your journey.
           </p>
           <ul>
             <li>
               <span className={styles.bullet} style={{ background: "#9333ea" }} />
-              Mindset Shifts
+              The Map of Destiny: Navigating Seasons & Divine Timing
             </li>
             <li>
               <span className={styles.bullet} style={{ background: "#9333ea" }} />
-              Time Mastery
+              Vision Crafting: Writing & Running with the Vision
             </li>
             <li>
               <span className={styles.bullet} style={{ background: "#9333ea" }} />
-              Goal Execution
+              Breaking Limiting Beliefs and Unlocking Inner Greatness
             </li>
           </ul>
         </div>
 
         <div className={`${styles.card}`} style={{ borderTopColor: "#6b21a8" }}>
-          <h3>Transformative Growth</h3>
+          <h3>Life Mastery</h3>
           <p>
-            Build resilience, emotional intelligence, and leadership skills for
-            long-term success.
+            Build the mindset, trust, and leadership capacity needed for lasting
+            kingdom impact.
           </p>
           <ul>
             <li>
               <span className={styles.bullet} style={{ background: "#6b21a8" }} />
-              Resilience Building
+              Kingdom Mindset Shift (Mind Renewal)
             </li>
             <li>
               <span className={styles.bullet} style={{ background: "#6b21a8" }} />
-              Emotional Mastery
-            </li>
-            <li>
-              <span className={styles.bullet} style={{ background: "#6b21a8" }} />
-              Leadership Growth
+              Building Trust, Vision, and Impact Teams
             </li>
           </ul>
         </div>

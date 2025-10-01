@@ -132,15 +132,15 @@ export default function SignupForm() {
           <form className={styles.form} onSubmit={handleSubmit}>
             <input
               type="text"
-              name="fullName"
-              value={formData.fullName || ""}
+              name="firstName"
+              value={formData.firstName || ""}
               onChange={handleChange}
               placeholder="First Name"
             />
              <input
               type="text"
-              name="fullName"
-              value={formData.fullName || ""}
+              name="lastName"
+              value={formData.lastName || ""}
               onChange={handleChange}
               placeholder="Last Name"
             />
@@ -175,7 +175,7 @@ export default function SignupForm() {
               onChange={handleChange}
               placeholder="Address"
             />
-            
+
              <input
               type="email"
               name="email"

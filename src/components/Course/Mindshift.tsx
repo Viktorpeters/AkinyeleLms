@@ -5,24 +5,6 @@ import styles from "./Mindshift.module.css";
 export default function MindshiftPage() {
   return (
     <div className={styles.page}>
-      {/* Header */}
-      {/* <header className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.headerContent}>
-            <div className={styles.logo}>KICA</div>
-            <nav>
-              <ul className={styles.navList}>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#transformation">Transformation</a></li>
-                <li><a href="#mastery">Mastery</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#enroll">Enroll</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header> */}
-
       {/* Hero Section */}
       <section className={styles.hero} id="home">
         <div className={styles.container}>
@@ -34,7 +16,7 @@ export default function MindshiftPage() {
             <p className={styles.heroDescription}>
               Break free from limiting beliefs, overcome procrastination, and
               develop Kingdom productivity habits that align your daily actions
-              with your divine purpose. It's time to think differently and
+              with your divine purpose. It’s time to think differently and
               produce exceptionally.
             </p>
             <div className={styles.heroButtons}>
@@ -73,7 +55,7 @@ export default function MindshiftPage() {
         </section>
       </div>
 
-      {/* Main Content (Transformation, Mastery, Skills, Results, CTA) */}
+      {/* Main Content */}
       <main className={styles.mainContent}>
         {/* Transformation Section */}
         <section className={styles.section} id="transformation">
@@ -81,53 +63,55 @@ export default function MindshiftPage() {
             <h2 className={styles.sectionTitle}>The Great Mindshift</h2>
             <p className={styles.sectionSubtitle}>
               Your mind is the battlefield where your future is won or lost.
-              We don't just change what you do—we transform how you think,
-              leading to lasting change that produces Kingdom results.
+              This module equips you to embrace transformational mindsets,
+              develop emotional resilience, and master productivity systems
+              for Kingdom exploits.
             </p>
 
             <div className={styles.transformationGrid}>
               <div className={styles.transformationCard}>
                 <div className={styles.cardIcon}>🧠</div>
-                <h3>Renewing Your Mind</h3>
+                <h3>Transformational Mindsets</h3>
                 <p>
-                  Break free from toxic thought patterns, limiting beliefs,
-                  and mental strongholds that have kept you stuck.
+                  Develop the mindset shifts required for success,
+                  breakthroughs, and exploits.
                 </p>
                 <ul className={styles.cardFeatures}>
-                  <li>Identify and demolish mental barriers</li>
-                  <li>Replace lies with Kingdom truth</li>
-                  <li>Develop faith-based thinking patterns</li>
-                  <li>Build unshakeable confidence</li>
+                  <li>Types of Transformational Mindsets for Success & Exploits</li>
+                  <li>Exploring the Mind Creators</li>
+                  <li>Breaking Limiting Thought Patterns</li>
+                  <li>Unlocking Inner Greatness</li>
                 </ul>
               </div>
 
               <div className={styles.transformationCard}>
                 <div className={styles.cardIcon}>⚡</div>
-                <h3>Defeating Procrastination</h3>
+                <h3>Radical Productivity</h3>
                 <p>
-                  Understand the root causes of delay tactics and develop
-                  systems that create unstoppable momentum.
+                  Build systems, habits, and daily structures that maximize
+                  your results with Kingdom excellence.
                 </p>
                 <ul className={styles.cardFeatures}>
-                  <li>Uncover procrastination triggers</li>
-                  <li>Build accountability systems</li>
-                  <li>Create compelling future vision</li>
-                  <li>Develop action-taking habits</li>
+                  <li>Radical Productivity: Tools, Habits & Systems for Results</li>
+                  <li>Building Daily Systems for Maximum Output</li>
+                  <li>Prioritisation, Focus & Execution Skills</li>
+                  <li>Time & Energy Mastery: Living Above Procrastination</li>
                 </ul>
               </div>
 
               <div className={styles.transformationCard}>
                 <div className={styles.cardIcon}>🎯</div>
-                <h3>Purpose-Driven Focus</h3>
+                <h3>Emotional & Time Mastery</h3>
                 <p>
-                  Learn to filter every opportunity, task, and commitment
-                  through the lens of your divine calling.
+                  Strengthen your inner resilience and use time as a divine
+                  resource for lasting impact.
                 </p>
                 <ul className={styles.cardFeatures}>
-                  <li>Clarify your life priorities</li>
-                  <li>Master the art of saying "no"</li>
-                  <li>Align daily actions with purpose</li>
-                  <li>Eliminate time-wasting activities</li>
+                  <li>Emotional Intelligence & Mental Resilience</li>
+                  <li>Time, Energy & Productivity Management</li>
+                  <li>Mastering Time as a Kingdom Resource</li>
+                  <li>Conflict Resolution & Forgiveness</li>
+                  <li>Mastering Emotions, Habits, & Thought Patterns</li>
                 </ul>
               </div>
             </div>
