@@ -83,8 +83,13 @@
 }
 
 .programstexts {
+  margin-top: 20px;
   text-align: center;
   padding: 20px;
+}
+
+.programstexts h1 {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1170px) {

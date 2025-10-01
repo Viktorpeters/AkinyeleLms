@@ -512,12 +512,12 @@
   padding: 0.6rem 0.8rem;
   border-radius: 6px;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--foreground);
   transition: background 0.2s ease, color 0.2s ease;
 }
 .courseIconn {
-  color: blue;
+  color: rgb(6, 1, 165);
 }
 .mobileDropdown li a:hover {
   background: #e0f2fe;
