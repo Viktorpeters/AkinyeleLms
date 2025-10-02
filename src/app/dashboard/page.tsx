@@ -33,7 +33,7 @@ const Page = () => {
                 fontWeight: "bold",
               }}
             >
-              KINGDOM IMPACT AND COACHING ADADEMY (KICA)
+              KINGDOM IMPACT AND COACHING ACADEMY (KICA)
             </b>
             . Your application is currently under review by our admissions team.
           </p>
