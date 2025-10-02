@@ -159,7 +159,7 @@ const courses = [
     course: "Leadership & Capacity Building",
     teacher: "Tunde James",
     description:
-      "Grow as a servant leader, sharpen your strategic thinking, build effective teams, and create sustainable systems while mentoring the next generation of Kingdom leaders.",
+      "Develop as a servant leader, sharpen strategy, build teams, create systems, and mentor future Kingdom leaders.",
     cta: "View Programs",
   },
 
@@ -189,15 +189,15 @@ const courses = [
     cta: "View Programs",
   },
 
-     {
+  {
     img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758726208/3f92da3a-d9ff-4fa7-bcf8-fab08a1530ec.png",
     course: "Digital Influence & Media Mastery",
     description:
-      "Harness the power of social media, create impactful content, and leverage digital tools—including AI—to build influence, innovate, and stay focused in the digital age.",
+      "Use social media, create impactful content, and leverage AI tools to innovate, build influence, and stay focused.",
     cta: "View programs",
   },
 
-    {
+  {
     img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758726411/833b9b04-1cc7-4b86-bd83-47059f4c3f6d.png",
     course: "Generational Impact Modules",
     description:
@@ -210,11 +210,10 @@ const OurPrograms = () => {
   return (
     <div>
       <div className={styles.programstexts}>
-        <h1>Schools that train you for the world’s most demanded skills</h1>
+        <h1>Learn the skills the world needs most</h1>
         <p>
-          Whether you're starting from scratch or switching careers, there's a
-          path here for you to succeed in today's global digital economy. Check
-          out wide range of schools
+          Whether you're a beginner or changing careers, our schools offer the
+          right path to help you grow and succeed.
         </p>
       </div>
 
