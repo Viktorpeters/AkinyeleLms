@@ -45,7 +45,7 @@ const DashHeader: React.FC<DashHeaderProps> = ({ sidebarOpen, onToggle }) => {
       </div>
 
       <div className={styles.right}>
-        {/* Bell with notification */}
+       
         <button className={styles.iconBtn}>
           <Bell size={20} />
           <span className={styles.notificationDot}>1</span>
