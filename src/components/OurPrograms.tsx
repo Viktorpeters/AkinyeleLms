@@ -138,7 +138,7 @@ const courses = [
     cta: "View Programs",
   },
   {
-    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758725631/51c1a0ac-6632-4853-80c1-767bc2dfba90.png",
+    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1759413739/90721b71-c25a-4406-b034-6353c96a0378.png",
     course: "Mindshift & Productivity Mastery",
     teacher: "Tunde James",
     description:
@@ -146,7 +146,7 @@ const courses = [
     cta: "View Programs",
   },
   {
-    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758731317/9a31046a-8b94-4431-a060-92d2786f93fc.png",
+    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1759414004/d891e877-6a89-4029-aad6-07e7609bcd6a.png",
     course: "Business, Career & Financial Intelligence",
     teacher: "Tunde James",
     description:
@@ -155,7 +155,7 @@ const courses = [
   },
 
   {
-    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758725875/970d1b2d-e87a-4257-8c9e-ae4d6ee88a20.png",
+    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1759413888/9f955695-1e9c-4a57-9982-32a6f51a4e97.png",
     course: "Leadership & Capacity Building",
     teacher: "Tunde James",
     description:
@@ -164,7 +164,7 @@ const courses = [
   },
 
   {
-    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758731407/0e226ade-1e1b-48ad-95b2-b9353322c28c.png",
+    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1759414463/e18bf08c-0086-4800-81b2-e743b2e7c47e.png",
     course: "Public Speaking & Influence",
     teacher: "Tunde James",
     description:
@@ -190,7 +190,7 @@ const courses = [
   },
 
   {
-    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758726208/3f92da3a-d9ff-4fa7-bcf8-fab08a1530ec.png",
+    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1759414100/156b4e3b-30cd-4e5a-99c9-a2d82f5a7dc4.png",
     course: "Digital Influence & Media Mastery",
     description:
       "Use social media, create impactful content, and leverage AI tools to innovate, build influence, and stay focused.",
@@ -198,7 +198,7 @@ const courses = [
   },
 
   {
-    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1758726411/833b9b04-1cc7-4b86-bd83-47059f4c3f6d.png",
+    img: "https://res.cloudinary.com/ddlnqthao/image/upload/v1759414463/e18bf08c-0086-4800-81b2-e743b2e7c47e.png",
     course: "Generational Impact Modules",
     description:
       "Become a solution provider through volunteerism, social impact, and transformation—raising Kingdom influencers to shape governance, business, culture, and global missions.",
@@ -236,7 +236,8 @@ const OurPrograms = () => {
               <p className={styles.teacher}>{item.teacher}</p>
               <h5>About Course</h5>
               <p className={styles.description}>{item.description}</p>
-              <Link href={`/Courses/${index}`}>
+              {/* <Link href={`/Courses/${index}`}> */}
+              <Link href="/signup">
                 <button className={styles.cta}>{item.cta}</button>
               </Link>
             </div>
