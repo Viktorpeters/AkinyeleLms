@@ -1,8 +1,27 @@
+"use client";
+
 import React from "react";
 import { GraduationCap, Clock, CheckCircle, HelpCircle } from "lucide-react";
 import styles from "./dashboard.module.css";
+// import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 
 const Page = () => {
+
+   const router = useRouter();
+
+  useEffect(() => {
+   
+    const user = localStorage.getItem("user");
+
+    if (!user) {
+     
+      router.push("/signup");
+    }
+  }, [router]);
+
   return (
     <div>
       {/* Welcome Section */}

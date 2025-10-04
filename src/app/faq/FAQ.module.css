@@ -7,7 +7,7 @@
   padding: 2rem;
   text-align: center;
   background: linear-gradient(135deg, #e0f2ff, #f9fbff);
-  font-family: sans-sarif;
+  font-family: "poppins", sans-sarif;
 }
 
 .title {
