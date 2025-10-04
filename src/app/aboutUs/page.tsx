@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 const page = () => {
   return (
     <div className={styles.aboutcont}>
-      {/* <Header /> */}
+      <Header />
       <AboutKICA />
       <Mission />
       <CTACard />
