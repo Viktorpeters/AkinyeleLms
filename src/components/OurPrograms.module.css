@@ -7,11 +7,19 @@
   justify-items: center;
 }
 
+.programstexts h1 {
+  font-size: 2.3rem;
+}
+
+/* .programstexts .headerr {
+  font-size: 2.9rem;
+} */
+
 .program {
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   width: 100%;
   max-width: 350px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -21,7 +29,7 @@
 
 .program:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
 
 .imagebox {
@@ -46,16 +54,16 @@
   gap: 10px;
   margin-bottom: 10px;
 }
- /* background-color: rgb(41, 41, 163); */
+/* background-color: rgb(41, 41, 163); */
 .topRated {
-  color: rgb(41, 41, 163); 
+  color: rgb(41, 41, 163);
   font-size: 0.8rem;
   font-weight: 600;
 }
 
 .teacher {
   font-size: 0.85rem;
-  color: #6b7280; 
+  color: #6b7280;
   margin: 5px 0 10px;
 }
 
@@ -103,4 +111,10 @@
     grid-template-columns: 1fr;
     padding: 10px 20px;
   }
+
 }
+  @media (max-width: 760px) {
+    .programstexts h1 {
+      font-size: 1.9rem;
+    }
+  }

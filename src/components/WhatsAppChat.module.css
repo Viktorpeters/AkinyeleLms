@@ -104,24 +104,26 @@
   gap: 0.75rem;
 }
 
+
+
 .fab {
   position: relative;
-  width: 3.5rem;
+  width: 5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: #2563eb;
+  /* background: #2563eb; */
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  /* box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); */
   cursor: pointer;
   border: none;
   transition: background 0.2s ease;
 }
 
 .fab:hover {
-  background: #1d4ed8;
+  /* background: #1d4ed8; */
 }
 
 .fabIcon {

@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Bot, ChevronRight } from "lucide-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { X, Bot, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+// import { Player } from "@lottiefiles/react-lottie-player";
 import styles from "./WhatsAppChat.module.css";
 
 export default function ChatWidget({
@@ -76,7 +78,7 @@ export default function ChatWidget({
         )}
       </AnimatePresence>
 
-      {/* Floating button */}
+      {/* Floating button with Lottie */}
       <div className={styles.fabWrapper}>
         <button
           onClick={() => setOpen((v) => !v)}
@@ -84,13 +86,24 @@ export default function ChatWidget({
           aria-controls="chat-popover"
           className={styles.fab}
         >
-          <MessageCircle className={styles.fabIcon} />
-          {/* <span className="sr-only">Chat with us</span> */}
-          <span className={styles.fabPulse} />
+          <DotLottieReact
+            src="https://lottie.host/689344bb-00c7-4b58-ad4c-d70035a040f6/haKTEruobo.lottie"
+            loop
+            autoplay
+            style={{ height: "100px", width: "300px" }}
+          />
+
+          {/* <Player
+            autoplay
+            loop
+            src="https://lottie.host/your-lottie-file.json" 
+            style={{ height: "40px", width: "40px" }}
+          /> */}
+          {/* <span className={styles.fabPulse} /> */}
         </button>
-        <button onClick={() => setOpen(true)} className={styles.labelBtn}>
+        {/* <button onClick={() => setOpen(true)} className={styles.labelBtn}>
           Chat with us
-        </button>
+        </button> */}
       </div>
     </div>
   );

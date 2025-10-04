@@ -210,7 +210,7 @@ const OurPrograms = () => {
   return (
     <div>
       <div className={styles.programstexts}>
-        <h1>Learn the skills the world needs most</h1>
+        <h1 className={styles.headerr}>Learn the skills the world needs most</h1>
         <p>
           Whether you're a beginner or changing careers, our schools offer the
           right path to help you grow and succeed.
