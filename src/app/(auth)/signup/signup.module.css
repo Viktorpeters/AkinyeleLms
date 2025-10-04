@@ -217,6 +217,7 @@
   width: 100%; /* select input always fills parent */
   min-width: 0; /* prevent weird overflow */
   box-sizing: border-box; /* include padding/border in width */
+  color: #374151;
 }
 
 .form select option {
