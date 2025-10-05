@@ -1,0 +1,73 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/faq/FAQ.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.FAQ_faqSection__ATj_l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f2ff, #f9fbff);
+  font-family: "poppins", sans-sarif;
+}
+
+.FAQ_title__1BQGs {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1e3a8a;
+  
+}
+
+.FAQ_icon__42nVM {
+  color: #2563eb;
+}
+
+.FAQ_faqContainer__9HnJX {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.FAQ_faqItem__qJx36 {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.FAQ_faqQuestion__cHP_B {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.FAQ_faqQuestion__cHP_B:hover {
+  color: #2563eb;
+}
+
+.FAQ_faqAnswer__Aldw7 {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.FAQ_active__ieBkH {
+  color: #2563eb;
+}
+

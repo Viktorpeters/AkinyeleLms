@@ -1,0 +1,126 @@
+.section {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8faff, #eef2ff);
+  text-align: center;
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+  /* margin-bottom: 12px; */
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #555;
+  line-height: 1.6;
+  animation: fadeIn 1s ease forwards;
+}
+
+.visionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  justify-content: center;
+}
+
+.visionCard {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visionCard:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.visionCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 16px 0 10px;
+  color: var(--color-foreground);
+}
+
+.visionCard p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Icon wrapper */
+.iconWrapper {
+  background: rgb(6, 1, 165);
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(74, 108, 247, 0.35);
+  animation: bounceIn 0.8s ease forwards;
+}
+
+.icon {
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  .title {
+    font-size: 1.9rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+}

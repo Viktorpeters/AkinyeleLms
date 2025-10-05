@@ -1,0 +1,86 @@
+{
+  "pages": {
+    "/(landing-page)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landing-page)/layout.css",
+      "static/chunks/app/(landing-page)/layout.js"
+    ],
+    "/(landing-page)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landing-page)/page.css",
+      "static/chunks/app/(landing-page)/page.js"
+    ],
+    "/aboutUs/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/aboutUs/layout.js"
+    ],
+    "/aboutUs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/aboutUs/page.css",
+      "static/chunks/app/aboutUs/page.js"
+    ],
+    "/faq/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/faq/layout.css",
+      "static/chunks/app/faq/layout.js"
+    ],
+    "/faq/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/faq/page.css",
+      "static/chunks/app/faq/page.js"
+    ],
+    "/dashboard/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dashboard/layout.css",
+      "static/chunks/app/dashboard/layout.js"
+    ],
+    "/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dashboard/page.css",
+      "static/chunks/app/dashboard/page.js"
+    ],
+    "/(auth)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(auth)/layout.css",
+      "static/chunks/app/(auth)/layout.js"
+    ],
+    "/(auth)/signup/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(auth)/signup/page.css",
+      "static/chunks/app/(auth)/signup/page.js"
+    ],
+    "/(auth)/signin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(auth)/signin/page.css",
+      "static/chunks/app/(auth)/signin/page.js"
+    ],
+    "/(auth)/OTP/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(auth)/OTP/page.css",
+      "static/chunks/app/(auth)/OTP/page.js"
+    ],
+    "/animation/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/animation/layout.js"
+    ],
+    "/animation/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/animation/page.css",
+      "static/chunks/app/animation/page.js"
+    ]
+  }
+}

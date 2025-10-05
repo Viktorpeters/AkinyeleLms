@@ -1,0 +1,193 @@
+.header {
+  height: 64px;
+  /* background: #ffffff; */
+  border-bottom: 1px solid #e2e8f0;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 0 1.5rem; */
+  position: sticky;
+  top: 0;
+  /* z-index: 999; */
+}
+
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo {
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+
+.search {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 2rem;
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.search input:focus {
+  border-color: #2563eb;
+  background: #fff;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  /* color: #64748b; */
+}
+
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.iconBtn:hover {
+  background: #f1f5f9;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.user:hover {
+  background: #f1f5f9;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.userEmail {
+  font-size: 0.75rem;
+  /* color: #64748b; */
+}
+
+/* DashHeader.module.css */
+
+.toggleBtn {
+  background: none;
+  border: none;
+  /* color: #f8fafc; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+
+/* Notification dot inside bell */
+.notificationDot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: red;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Make iconBtn relative to contain the dot */
+.iconBtn {
+  position: relative; /* add this */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+
+/* User initials circle */
+.initials {
+  width: 40px;
+  height: 40px;
+  background: #2563eb; /* blue background, you can change */
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+
+
+@media (max-width: 480px) {
+  .userInfo {
+    display: none;
+  }
+}
