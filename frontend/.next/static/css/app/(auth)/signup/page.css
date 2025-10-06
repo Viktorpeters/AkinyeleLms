@@ -264,8 +264,10 @@
 .signup_btnGroup__DOZPe {
   grid-column: span 2;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .signup_backBtn__vbaw_ {
@@ -281,6 +283,7 @@
   background: #005bb5;
   color: #fff;
   width: 100%;
+  
 }
 .signup_nextBtn__ZNmtC:hover {
   background: #0070f3;
@@ -600,6 +603,8 @@
 
   .signup_btnGroup__DOZPe {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
   }
 

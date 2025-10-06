@@ -207,6 +207,9 @@ export default function SignupForm() {
               >
                 Back
               </button> */}
+              {/* <div className={styles.nextcont}>
+
+              </div> */}
               <Link href="/OTP">
                 <button
                   type="submit"

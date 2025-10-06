@@ -17,7 +17,7 @@
 
 .program {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 11px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   width: 100%;
@@ -52,13 +52,17 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 /* background-color: rgb(41, 41, 163); */
 .topRated {
   color: rgb(41, 41, 163);
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+.programContent h5 {
+  margin-bottom: 5px;
 }
 
 .teacher {

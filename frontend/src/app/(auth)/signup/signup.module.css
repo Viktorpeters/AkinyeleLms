@@ -259,8 +259,10 @@
 .btnGroup {
   grid-column: span 2;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .backBtn {
@@ -276,6 +278,7 @@
   background: #005bb5;
   color: #fff;
   width: 100%;
+  
 }
 .nextBtn:hover {
   background: #0070f3;
@@ -594,6 +597,8 @@
 
   .btnGroup {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
   }
 

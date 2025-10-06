@@ -111,10 +111,14 @@
   transform: translateY(0);
 }
 .otp-logo {
-  position: absolute;
+  /* position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 1rem; */
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .otp-button-disabled {

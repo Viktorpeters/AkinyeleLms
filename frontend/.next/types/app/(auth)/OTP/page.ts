@@ -1,4 +1,4 @@
-// File: C:\Users\hp\AkinyeleLms\frontend\src\app\(auth)\OTP\page.tsx
+// File: C:\Users\hp\Desktop\AkinyeleLms\frontend\src\app\(auth)\OTP\page.tsx
 import * as entry from '../../../../../src/app/(auth)/OTP/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

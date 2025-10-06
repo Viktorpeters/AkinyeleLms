@@ -146,7 +146,8 @@ const Header = () => {
                 <ul className={styles.courseList}>
                   {courses.map(({ name, icon: Icon }, i) => (
                     <li key={i}>
-                      <Link style={{ color: "black" }} href={`/Courses/${i}`}>
+                      {/* <Link style={{ color: "black" }} href={`/Courses/${i}`}> */}
+                      <Link style={{ color: "black" }} href="/signup">
                         <Icon size={18} className={styles.courseIcon} />
                         {name}
                       </Link>
@@ -198,7 +199,10 @@ const Header = () => {
       {/* Actions */}
       <div className={styles.actions}>
         <Link href="/signin">
-          <button className={`${styles.primaryBtn} ${isScrolled ? styles.primarybtn : ""}`}>Sign In</button>
+         <button className={`${styles.signInBtn} ${isScrolled ? styles.signInBtnScrolled : ""}`}>
+  Sign In
+</button>
+
           {/* <Button2>Sign in</Button2> */}  
         </Link>
         <Link href="/signup">
@@ -258,7 +262,7 @@ const Header = () => {
                   <li key={i}>
                     <Icon size={18} className={styles.courseIconn} />
                     <Link
-                      href={`/Courses/${i}`}
+                      href="/signup"
                       onClick={() => setMobileNavOpen(false)}
                     >
                       {name}
@@ -289,7 +293,7 @@ const Header = () => {
               />
             </button>
             {showGetInvolvedMobile && (
-              <ul className={styles.mobileDropdown}>
+              <ul className={styles.mobileDropdownn}>
                 {getInvolvedItems.map(({ name, href }, i) => (
                   <li key={i}>
                     <Link href={href} onClick={() => setMobileNavOpen(false)}>

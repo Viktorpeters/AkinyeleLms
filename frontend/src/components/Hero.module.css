@@ -37,7 +37,8 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.511);
+  /* background: rgba(0, 0, 0, 0.511); */
+  background: #000000b5;
   z-index: 2;
 }
 
@@ -222,11 +223,11 @@
 
 @media (max-width: 768px) {
   .headline {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
   }
 
   .subhead {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 200;
   }
 

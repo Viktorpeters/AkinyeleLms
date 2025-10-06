@@ -231,9 +231,9 @@ const OurPrograms = () => {
             <div className={styles.programContent}>
               <div className={styles.topRow}>
                 <h3>{item.course}</h3>
-                <span className={styles.topRated}>Top Rated</span>
+                {/* <span className={styles.topRated}>Top Rated</span> */}
               </div>
-              <p className={styles.teacher}>{item.teacher}</p>
+              {/* <p className={styles.teacher}>{item.teacher}</p> */}
               <h5>About Course</h5>
               <p className={styles.description}>{item.description}</p>
               {/* <Link href={`/Courses/${index}`}> */}

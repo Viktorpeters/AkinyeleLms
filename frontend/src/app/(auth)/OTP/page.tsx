@@ -52,7 +52,10 @@ export default function OTPVerification() {
 
   return (
     <div className="otp-container">
-      <div className="otp-logo">
+      
+
+      <div className="otp-card">
+        <div className="otp-logo">
         <Image
           src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg" 
           alt="Logo"
@@ -61,8 +64,6 @@ export default function OTPVerification() {
           priority
         />
       </div>
-
-      <div className="otp-card">
         <div className="otp-header">
           <h1>Enter OTP</h1>
           <p>Enter the OTP sent to your phone number.</p>
