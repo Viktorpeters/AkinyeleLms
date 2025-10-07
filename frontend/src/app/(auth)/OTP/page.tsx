@@ -2,11 +2,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./OTPVerification.css";
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
+import toast from "react-hot-toast";
 
 export default function OTPVerification() {
   const inputsRef = useRef<HTMLInputElement[]>([]);
   const [isComplete, setIsComplete] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const value = e.target.value;
@@ -16,7 +18,6 @@ export default function OTPVerification() {
       if (index > 0) inputsRef.current[index - 1].focus();
     }
     e.target.value = value.slice(-1);
-
     checkComplete();
   };
 
@@ -41,30 +42,40 @@ export default function OTPVerification() {
   };
 
   const checkComplete = () => {
-    const allFilled = inputsRef.current.every(input => input?.value.length === 1);
+    const allFilled = inputsRef.current.every((input) => input?.value.length === 1);
     setIsComplete(allFilled);
   };
 
-  // Optional: check on mount to handle prefilled OTPs
   useEffect(() => {
     checkComplete();
   }, []);
 
+ const handleResend = (e: React.MouseEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  toast.loading("Resending OTP...");
+  
+  setTimeout(() => {
+    setLoading(false);
+    toast.dismiss(); 
+    toast.success("OTP sent successfully 🎉");
+  }, 5000);
+};
+
+
   return (
     <div className="otp-container">
-      
+      <div className="otp-logo"></div>
 
       <div className="otp-card">
-        <div className="otp-logo">
-        <Image
-          src="https://res.cloudinary.com/ddlnqthao/image/upload/v1758300104/WhatsApp_Image_2025-09-19_at_17.19.02_cb5c3139_jazl8s.jpg" 
-          alt="Logo"
-          width={60}
-          height={40}
-          priority
-        />
-      </div>
         <div className="otp-header">
+          <Image
+            src="https://res.cloudinary.com/dcghgoebb/image/upload/v1758557984/image_nmwq0a.png"
+            alt="Logo"
+            width={100}
+            height={80}
+            priority
+          />
           <h1>Enter OTP</h1>
           <p>Enter the OTP sent to your phone number.</p>
         </div>
@@ -85,23 +96,32 @@ export default function OTPVerification() {
               />
             ))}
           </div>
+
           <p>A verification code has been sent to you.</p>
+
           <p className="otp-resend">
-            Didn't receive OTP?{" "}
-            <Link className="otp-resend-link" href="/signin">
-              Resend
-            </Link>
+            Didn’t receive OTP?{" "}
+            <a
+              href="#"
+              onClick={handleResend}
+              className={`otp-resend-link ${loading ? "disabled" : ""}`}
+            >
+              {loading ? (
+                <span className="loader"></span>
+              ) : (
+                "Resend"
+              )}
+            </a>
           </p>
 
           <Link href="/success">
-
-          <button
-            type="button"
-            className={`otp-button ${!isComplete ? "otp-button-disabled" : ""}`}
-            disabled={!isComplete}
-          >
-            Proceed
-          </button>
+            <button
+              type="button"
+              className={`otp-button ${!isComplete ? "otp-button-disabled" : ""}`}
+              disabled={!isComplete}
+            >
+              Proceed
+            </button>
           </Link>
         </form>
       </div>
