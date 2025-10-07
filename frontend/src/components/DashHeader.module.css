@@ -124,13 +124,15 @@
 .toggleBtn {
   background: none;
   border: none;
-  /* color: #f8fafc; */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 2rem;
+  margin-right: 3rem;
+  width: 70px;
 }
+
+
 
 
 /* Notification dot inside bell */
@@ -138,7 +140,7 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  background: red;
+  /* background: red; */
   color: white;
   font-size: 0.65rem;
   font-weight: 600;
