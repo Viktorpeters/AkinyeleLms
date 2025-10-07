@@ -93,7 +93,7 @@ export default function OTPVerification() {
             </Link>
           </p>
 
-          <Link href="/animation">
+          <Link href="/success">
 
           <button
             type="button"

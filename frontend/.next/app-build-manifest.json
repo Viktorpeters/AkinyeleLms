@@ -12,28 +12,10 @@
       "static/css/app/(landing-page)/page.css",
       "static/chunks/app/(landing-page)/page.js"
     ],
-    "/animation/layout": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/animation/layout.js"
-    ],
-    "/animation/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/animation/page.css",
-      "static/chunks/app/animation/page.js"
-    ],
-    "/dashboard/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/dashboard/layout.css",
-      "static/chunks/app/dashboard/layout.js"
-    ],
-    "/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/dashboard/page.css",
-      "static/chunks/app/dashboard/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
