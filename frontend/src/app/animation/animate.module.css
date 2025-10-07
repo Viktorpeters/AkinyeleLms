@@ -1,77 +1,82 @@
 .animationContainer {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+  background: #f9f9f9;
+  text-align: center;
 }
+
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: #4ade80; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+}
+
+.checkmark {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+}
+
 
 .animationContainer h3 {
-  text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-
-  
-  animation: bounce 2s infinite;
+  font-size: 1.4rem;
+  color: #243044;
+  font-weight: 600;
 }
 
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-15px);
-  }
-  60% {
-    transform: translateY(-8px);
-  }
-}
-
-.animationContainer :global(canvas) {
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-}
-
-.animationContainer button {
-  padding: 0.8rem 2rem;
+.button {
+  padding: 0.8rem 2.2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   border: none;
-  border-radius: 9999px; 
+  border-radius: 9999px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
-.animationContainer button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 117, 252, 0.5);
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 117, 252, 0.5);
 }
 
-.animationContainer button:active {
+.button:active {
   transform: translateY(0);
   box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
 }
 
 
 @media (max-width: 768px) {
-  .animationContainer {
-    max-width: 90%;
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .checkmark {
+    font-size: 2.5rem;
   }
 
   .animationContainer h3 {
     font-size: 1rem;
   }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.8rem;
+  }
 }
-
-

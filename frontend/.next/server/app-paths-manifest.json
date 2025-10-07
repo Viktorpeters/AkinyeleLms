@@ -1,6 +1,4 @@
 {
   "/(landing-page)/page": "app/(landing-page)/page.js",
-  "/(auth)/signin/page": "app/(auth)/signin/page.js",
-  "/(auth)/OTP/page": "app/(auth)/OTP/page.js",
-  "/(auth)/signup/page": "app/(auth)/signup/page.js"
+  "/animation/page": "app/animation/page.js"
 }

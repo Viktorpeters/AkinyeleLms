@@ -1,24 +1,48 @@
 "use client";
 import React from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import styles from "./animate.module.css";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import styles from "./animate.module.css";
 
 const Animation = () => {
   return (
     <div className={styles.animationContainer}>
-      <DotLottieReact
-        src="https://lottie.host/289a1b25-e720-4990-9d94-62f3d2b7b5b6/MRPiskOIsm.lottie"
-        loop
-        autoplay
-      />
-      <h3>You have signed up successfully</h3>
-      <Link href="./dashboard">
+     
+      <motion.div
+        className={styles.circle}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 10 }}
+      >
+        <motion.div
+          className={styles.checkmark}
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+          ✓
+        </motion.div>
+      </motion.div>
 
-      <button>
-        Proceed to dashboard
-      </button>
-      </Link>
+      {/* Success text */}
+      <motion.h3
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        You have signed up successfully
+      </motion.h3>
+
+     
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+      >
+        <Link href="./dashboard">
+          <button className={styles.button}>Proceed to dashboard</button>
+        </Link>
+      </motion.div>
     </div>
   );
 };

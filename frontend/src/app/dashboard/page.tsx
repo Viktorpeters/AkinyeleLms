@@ -10,17 +10,17 @@ import { useRouter } from "next/navigation";
 
 const Page = () => {
 
-   const router = useRouter();
+  //  const router = useRouter();
 
-  useEffect(() => {
+  // useEffect(() => {
    
-    const user = localStorage.getItem("user");
+  //   const user = localStorage.getItem("user");
 
-    if (!user) {
+  //   if (!user) {
      
-      router.push("/signup");
-    }
-  }, [router]);
+  //     router.push("/signup");
+  //   }
+  // }, [router]);
 
   return (
     <div>
