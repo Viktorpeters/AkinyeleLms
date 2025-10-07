@@ -30,7 +30,7 @@ const Animation = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        You have signed up successfully
+        You have created an account successfully
       </motion.h3>
 
      
